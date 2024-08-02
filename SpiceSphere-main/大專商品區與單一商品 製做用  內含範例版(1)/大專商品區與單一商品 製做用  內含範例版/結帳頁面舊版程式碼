@@ -1,0 +1,229 @@
+ <!-- 收件地址 -->
+    
+    <div id="recipientData">
+        <p>收件地址</p>
+        <!-- 白區塊 -->
+        <div style="width: 655px; 
+        height: 324px;  background-color: rgba(255, 255, 255, 1);">
+            
+            <!-- 白區塊內的排版 -->
+            <div id="whiteArea">
+
+                <div id="nameArea" class="userInput">
+                    <label class="userLabel"  for="userName">收件人</label>
+                    <!-- 收件人輸入 -->
+                    <input type="text" id="userName">
+                </div>
+
+                <div id="phoneArea" >
+                    <label class="userLabel" for="usePhone">電話</label>
+                    <!-- 電話輸入 -->
+                   <input type="tel" id="usePhone">
+               </div>
+
+               <div id="mailArea">
+                    <label class="userLabel" for="userEmail">電子信箱</label>
+                <!-- 電子信箱輸入 -->
+                    <input type="email" id="userEmail">
+                </div>
+
+                <div id="postalArea">
+                    <label class="userLabel" for="postalCode">郵遞區號</label>
+                    <!-- 郵遞區號輸入 -->
+                    <input type="text" id="postalCode">
+                </div>
+
+                <div id="cityArea">
+                    <!-- 縣市輸入 -->
+                    <label class="userLabel" for="userCity">市</label>
+                    <input type="text" id="userCity">
+                </div>
+
+                <div id="townArea">
+                       <!-- 鎮區輸入 -->
+                    <label class="userLabel" for="userTown">區</label>
+                    
+                    <input style="
+                    width: 91px;
+                    height: 33px;
+                    border: 1px solid rgba(53, 53, 53, 1);" 
+                    for="userStreet" type="text" id="userTown">
+                </div>
+            
+                <!-- 街道輸入 -->
+                <div id="streetArea">
+                    <label class="userLabel" for="userStreet">街</label>
+
+                    <input  style="
+                    width: 53px;
+                    height: 33px;
+                    border: 1px solid rgba(53, 53, 53, 1);"
+                     type="text" id="userStreet">
+                </div>
+            
+                <!-- 門號輸入 -->
+                <div id="numberArea">
+                    <label class="userLabel" for="userNumber">號</label>
+
+                    <input  
+                    style="
+                    width: 53px;
+                    height: 33px;
+                    border: 1px solid rgba(53, 53, 53, 1);"
+                    type="text" id="userNumber">
+                </div>     
+
+
+            </div>
+
+        </div>
+    </div>
+   
+
+
+    <!-- 購物車 -->
+    <div id="shoppingCarData">
+        <p>購物車</p>
+        <!-- 白區塊 -->
+        <div style="width: 563px;
+        height: 938px;  background-color: rgba(255, 255, 255, 1);">
+
+            <!-- 白區塊內的排版 -->
+            <div id="productWhiteArea">
+
+                <div class="productAmount">
+                    <!-- 商品 -->
+                    <img src="./img/product10.jpg" alt="">
+                        <p class="productAmountTitle">Sdfghjkasv</p>
+                        <p class="productAmountSku">SKU:01234</p>
+                        <p class="productAmountPrice">$ 5,000</p>
+
+                        <!-- +-按鈕 -->
+                        <div class="productAmountBtn">
+                            <button>-</button>
+                            &nbsp;&nbsp;	
+                            <p>1</p>
+                            &nbsp;&nbsp;
+                            <button>+</button>
+                        </div>
+                </div>
+
+                <div class="productAmount">
+                    <!-- 商品 -->
+                    <img src="./img/product10.jpg" alt="">
+                        <p class="productAmountTitle">Sdfghjkasv</p>
+                        <p class="productAmountSku">SKU:01234</p>
+                        <p class="productAmountPrice">$ 5,000</p>
+
+                        <!-- +-按鈕 -->
+                        <div class="productAmountBtn">
+                            <button>-</button>
+                            &nbsp;&nbsp;	
+                            <p>1</p>
+                            &nbsp;&nbsp;
+                            <button>+</button>
+                        </div>
+                </div>
+
+                <div class="productAmount">
+                    <!-- 商品 -->
+                    <img src="./img/product10.jpg" alt="">
+                        <p class="productAmountTitle">Sdfghjkasv</p>
+                        <p class="productAmountSku">SKU:01234</p>
+                        <p class="productAmountPrice">$ 5,000</p>
+
+                        <!-- +-按鈕 -->
+                        <div class="productAmountBtn">
+                            <button>-</button>
+                            &nbsp;&nbsp;	
+                            <p>1</p>
+                            &nbsp;&nbsp;
+                            <button>+</button>
+                        </div>
+                </div>
+
+                <div class="bordLine"></div>
+                <!-- 商品與運費總金額 -->
+                <p class="totalPrice">商品總金額</p>
+                <p class="shipPrice">運費總金額</p>
+
+                <div class="bordLine2"></div>
+                <!-- 總付款金額 -->
+                <p class="allTotalPrice">總付款金額</p>
+
+                <button id="checkOut">結帳</button>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- 付款方式 -->
+    <div id="payWay">
+        <p>付款方式</p>
+        <!-- 白區塊 -->
+        <div id="payWayWhite">
+            <div>
+                <input id="cashOnDelivery" type="radio">
+                <label for="cashOnDelivery">貨到付款</label>
+            </div>
+
+            <div>
+                <input id="creditCard" type="radio">
+                <label for="creditCard">信用卡</label>
+            </div>
+
+            <div>
+                <input id="creditCardInstallment" type="radio">
+                <label for="creditCardInstallment">信用卡分期</label>
+            </div>
+
+            <div>
+                <input id="payStreet" type="radio">
+                <label for="payStreet">街口支付</label>
+            </div>
+        </div>
+    </div>
+
+
+    productSectionPhone的html與CSS
+    <!-- 換頁按鈕 -->
+    <div id="pageChange">
+        <div class="pageChangeBtn">
+          <button>1</button>
+          <button>2</button>
+          <button>3</button>
+          <button>
+            <img src="./img/pageChangeImg.png" alt="">
+            <img src="./img/pageChangeImg.png" alt="">
+          </button>
+        </div>
+     </div>
+
+     /* 換頁按鈕的CSS */
+    #pageChange{
+        margin: 45px 9px;
+        display: flex;
+        justify-content: center;
+      }
+
+      #pageChange .pageChangeBtn{
+        display: flex;
+        width: 100px;
+      }
+      
+      #pageChange .pageChangeBtn button{
+        margin-left: 5px;
+        display: flex;
+        width: 40%;
+       justify-content: center;
+       }
+
+
+       #pageChange .pageChangeBtn :last-child>img{
+        width: 180%;
+        padding-top: 4px;
+        padding-right: 1.5px;
+        display: flex;
+      }

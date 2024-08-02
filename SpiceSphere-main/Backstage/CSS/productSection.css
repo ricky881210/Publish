@@ -1,0 +1,347 @@
+body {
+  margin: 0px;
+}
+
+
+:root {
+  --mainOrange: rgb(243, 121, 36);
+  --textWithe: rgb(255, 255, 255);
+  --borderGray: rgb(128, 128, 128);
+}
+
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+#navBar {
+  background-color:var(--mainOrange);
+  display: flex;
+  width: 100%;
+  height: 50px;
+  font-size: 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#navBar .logo {
+  color:var( --textWithe);
+  font-weight: 900;
+  font-size: 40px;
+  margin-left: 92px;
+  text-align: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+#navBar #navRight {
+  margin-right: 92px;
+  display: flex;
+}
+#navBar #navRight a {
+  font-weight: 600;
+  margin: 0 20px;
+  color:var( --textWithe);
+  align-self: center;
+}
+
+#navRight>div>img{
+  width:35px;
+  height:35px;
+  stroke-width:1.5;
+
+}
+
+#sloganSection {
+  background-image: url(../../img/common/main_img.jpg);
+  background-size: 1920px 900px;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 600px;
+  display: flex;
+  align-items: center;
+}
+
+#sloganSection p {
+  color:var( --textWithe);
+  margin: 0px;
+  padding-left: 160px;
+}
+
+#sloganSection p:first-child {
+  font-weight: 600;
+  font-size: 40px;
+  padding-bottom: 20px;
+}
+
+#sloganSection p:last-child {
+  font-size: 24px;
+  width: 550px;
+}
+
+/* 以上是導覽列 */
+
+#mainSection {
+  margin: 65px 50px;
+  display: flex;
+}
+#mainSection #mainSectionSearch {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+}
+
+
+
+#mainSection #mainSectionSearch .searchBar input {
+  width: 60%;
+}
+#mainSection #mainSectionSearch .mainSectionSearchTitle {
+  font-weight: 600;
+  position: relative;
+  margin-bottom: 15px;
+  margin-top: 25px;
+  font-size: 16px;
+}
+
+#mainSection #mainSectionSearch .mainSectionSearchTitle::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 80%;
+  height: 1px;
+  background-color: var(--borderGray);
+}
+#mainSection #mainSectionSearch .rangeContainer {
+  display: flex;
+  align-items: center;
+  width: 80%;
+}
+#mainSection #mainSectionSearch .rangeLabels {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  color: var(--mainOrange);
+  font-weight: bold;
+}
+
+
+#mainSection #mainSectionSearch .checkboxContainer {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 5px 0px;
+  gap: 15px;
+}
+
+.checkboxContainer>div>input{
+  margin-left: 5px;
+  margin-right: 10px;
+}
+
+/* 商品區CSS */
+#mainSection #mainSectionProductCards {
+  width: 1600px;
+  display: flex;
+  flex-wrap: wrap;
+}
+#mainSection #mainSectionProductCards .card {
+  width: 215px;
+  height: 340px;
+  margin: 0 9px 10px 20px;
+  box-shadow: 0px 3px 3px  var(--borderGray);
+ 
+}
+#mainSection #mainSectionProductCards .card img {
+  width: 215px;
+  height: 225px;
+}
+#mainSection #mainSectionProductCards .card .cardName {
+  font-weight: 600;
+  font-size: 24px;
+  margin-left: 15px;
+}
+#mainSection #mainSectionProductCards .card .cardPrice {
+  font-weight: 600;
+  font-size: 20px;
+  color:  var(--mainOrange);
+  margin-left: 15px;
+}
+#mainSection #mainSectionProductCards .card hr {
+  width: 95%;
+   border: 1px solid var(--borderGray);
+}
+#mainSection #mainSectionProductCards .card .cardBtn {
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+
+}
+
+.cardBtn>button{
+  /* border-top: none;
+  border-bottom: none; */
+  background-color: transparent;
+  border-radius:15%;
+  margin: 0 15px;
+}
+
+
+#pageChange{
+  margin: 45px 600px;
+  display: flex;
+  justify-content: center;
+  /* background-color: aqua; */
+}
+
+
+#pageChange .pageChangeBtn{
+  display: flex;
+  /* margin-left: 930px;
+  margin-bottom: 30px;
+  position: relative;
+  bottom: 30px; */
+  width: 215px;
+  list-style: none;
+}
+
+#pageChange .pageChangeBtn button{
+ margin-left: 5px;
+ display: flex;
+ width: 50%;
+justify-content: center;
+}
+
+#pageChange .pageChangeBtn :last-child>img{
+  width: 165%;
+  padding-top: 3px;
+  padding-right: 1.5px;
+  display: flex;
+ 
+  
+}
+
+/* 網頁底的CSS */
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 100px;
+  background-color: var(--mainOrange);
+  color: var(--textWithe);
+  display: flex;
+  align-items: center;
+  height: 40px;
+}
+footer .logo {
+  color: var(--textWithe);
+  font-weight: 900;
+  text-align: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+footer #foot_sub {
+  width: 200px;
+  display: flex;
+  align-items: center;
+}
+footer #foot_sub input {
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  height: 20px;
+}
+footer #foot_sub button {
+  border-radius: 25px;
+  padding: 0 10px;
+  white-space: nowrap;
+  border: 1px solid var(--borderGray);
+  background-color: var(--mainOrange);
+  color: var(--text_withe);
+  outline: none;
+  margin-left: -20px;
+  height: 25px;
+}
+
+/*網頁的平板RWD  */
+@media screen and (max-width: 1024px) {
+  #navBar {
+    height: 30px;
+    font-size: 16px;
+  }
+  #navBar .logo {
+    font-size: 25px;
+  }
+  #sloganSection {
+    background-size: 1200px 600px;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 450px;
+  }
+  #sloganSection p {
+    /* color: var(--text_withe); */
+    margin: 0px;
+    padding-left: 80px;
+  }
+  #sloganSection p:first-child {
+    font-weight: 600;
+    font-size: 30px;
+    padding-bottom: 20px;
+    /* color: var(--text_withe); */
+  }
+  #sloganSection p:last-child {
+    font-size: 24px;
+    width: 350px;
+    /* color: var(--text_withe); */
+  }
+
+ /* 搜尋區的RWD */
+
+  #mainSection .rangeContainer {
+    height: 2px;
+  }
+  #mainSection .rangeLabels {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    font-size: 14px;
+  }
+  #mainSection .checkboxContainer {
+    font-size: 14px;
+  }
+
+  /* 商品區的RWD */
+  #main_section #mainSectionProductCards .card {
+    width: 170px;
+    height: 255px;
+    margin: 0 0 10px 10px;
+  }
+  #main_section #mainSectionProductCards .card img {
+    width: 170px;
+    height: 160px;
+  }
+  #main_section #mainSectionProductCards .card .cardName {
+    font-weight: 600;
+    font-size: 20px;
+  }
+  #main_section #mainSectionProductCards .card .cardPrice {
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--main_orange);
+  }
+
+  /* 換頁按鈕的RWD */
+  #pageChange{
+    margin: 45px 450px;
+    display: flex;
+    justify-content: center;
+  }
+
+
+}/*# sourceMappingURL=product_section.css.map */

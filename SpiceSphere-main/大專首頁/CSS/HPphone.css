@@ -1,0 +1,307 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+@media screen and (max-width: 500px) {
+
+    /* Style the navigation menu */
+    .topnav {
+        overflow: hidden;
+        position: relative;
+    }
+
+    /* Hide the links inside the navigation menu (except for logo/home) */
+    .topnav #myLinks {
+        display: none;
+        background-color: rgba(234, 121, 36, 70%);
+    }
+
+    /* Style navigation menu links */
+    .topnav a {
+        color: white;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: bold;
+        display: block;
+    }
+
+    /* Style the hamburger menu */
+    .topnav a.icon {
+        background: rgba(234, 121, 36, 100%);
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    /* Style the active link (or home/logo) */
+    .active {
+        background-color: rgba(234, 121, 36, 100%);
+        color: white;
+    }
+
+    /* section A  */
+    .slide {
+        text-align: center;
+        background-size: cover;
+        position: relative;
+        display: inline-block;
+    }
+
+    .slide img {
+        width: 100vw;
+        height: 250px;
+        object-fit: cover;
+    }
+
+    .slide h1 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 20px;
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+    /* section B  */
+    .sectionB {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .bContainer1 {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 300px;
+        height: 150px;
+        border-radius: 10px;
+        /* Optional: adds rounded corners */
+    }
+
+    .logo {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        /* Ensures the image covers the container without stretching */
+        opacity: 0.4;
+    }
+
+    .logoText {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: rgb(53, 53, 53);
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+    .bContainer2 {
+        width: 300px;
+        text-align: center;
+        font-size: 16px;
+        font-family: 'Courier New', Courier, monospace;
+
+    }
+
+    .bContainer3 {
+        margin-top: 10px;
+    }
+
+    .bContainer3 div {
+        position: relative;
+    }
+
+    .bContainer3 h4 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 20px;
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+    .bContainer3 div img {
+        width: 200px;
+        height: 125px;
+        object-fit: cover;
+        border-radius: 5px;
+        margin-top: 10px;
+
+    }
+
+    /* section C  */
+    .cContainer1 {
+        position: relative;
+    }
+
+    .cContainer1 img {
+        width: 100vw;
+        height: 250px;
+        margin-top: 20px;
+        object-fit: cover;
+    }
+
+    .cContainer1 h1 {
+        position: absolute;
+        top: 50%;
+        left: 30%;
+        transform: translate(-50%, -50%);
+        color: rgb(53, 53, 53);
+        font-size: 20px;
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+    .cContainer2 a{
+        color:rgba(234, 121, 36, 100%)
+    }
+
+    .box1 {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+    }
+
+    .box1 img {
+        width: 200px;
+        height: 125px;
+        object-fit: cover;
+        border-radius: 15px;
+        margin-left: 50px;
+    }
+
+    .box2,
+    .box3 {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+    }
+
+    .box2 img {
+        width: 200px;
+        height: 125px;
+        object-fit: cover;
+        border-radius: 15px;
+        margin-left: 50px;
+    }
+
+    .box3 img {
+        width: 200px;
+        height: 125px;
+        object-fit: cover;
+        border-radius: 15px;
+        margin-left: 50px;
+    }
+
+    .recTitle {
+        margin-top: 20px;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: bold;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .description {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 12px;
+        margin-top: 0px;
+        text-align: center;
+        width: 300px;
+    }
+
+    /* section D  */
+        .dContainer1 {
+            background-size: cover;
+            position: relative;
+        }
+    
+        .dContainer1 img {
+            position: relative;
+            width: 100vw;
+            height:250px;
+            margin-top: 40px;
+            object-fit: cover;
+        }
+    
+        .proTitle {
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 25px;
+            margin-top: 10px;
+        }
+    
+        .dContainer2 {
+            display: flex;
+           flex-direction: row;
+           justify-content: center;
+            flex-wrap: wrap;
+            gap: 5px;
+            /* 间距 */
+            /* margin-left: 50px;
+            margin-right: 50px; */
+        }
+    
+        .product {
+            padding: 15px;
+            width: 200px;
+            /* 4个选项均匀排列 */
+            box-sizing: border-box;
+            text-align: center;
+        }
+    
+        .product img {
+            width: 125px;
+            height: 125px;
+            border-radius: 4px;
+            align-items: center;
+        }
+    
+        .product h3 {
+            font-size: 1.2em;
+            margin: 10px 0;
+            align-items: center;
+            font-family: 'Courier New', Courier, monospace;
+        }
+    
+        .product p {
+            font-size: 0.9em;
+            color: rgb(53, 53, 53);
+            align-items: center;
+            font-family: 'Courier New', Courier, monospace;
+        }
+    
+        .product .price {
+            font-size: 1.2em;
+            color: rgb(53, 53, 53);
+            margin: 10px 0;
+            align-items: center;
+            font-family: 'Courier New', Courier, monospace;
+        }
+    
+        .product button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 1em;
+            align-items: center;
+            font-family: 'Courier New', Courier, monospace;
+        }
+    
+        .product button:hover {
+            background-color: #0056b3;
+        }
+
+}

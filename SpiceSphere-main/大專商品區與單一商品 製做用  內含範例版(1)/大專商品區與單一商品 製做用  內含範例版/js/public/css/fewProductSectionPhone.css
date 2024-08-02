@@ -1,0 +1,426 @@
+/* 導覽列與大圖的CSS */
+body {
+    margin: 0px;
+  }
+  
+  
+  :root {
+    --main_orange: rgb(243, 121, 36);
+    --text_withe: rgb(255, 255, 255);
+    --border-gray: rgb(128, 128, 128);
+  }
+  
+  
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+
+  * { 
+    box-sizing: border-box; 
+    }
+
+    ul {
+        list-style: none; 
+        padding-left: 0; 
+      }
+
+
+
+
+    @media screen and (max-width: 500px) {
+        #navBar {
+          background-color: var(--main_orange);
+          color: var(--text_withe);
+          display: flex;
+          justify-content: space-between;
+          padding: 0 20px;
+         
+        }
+    
+        #navBar input[type=checkbox] {
+          display: none;
+        }
+    
+        
+        /* 漢堡選單的CSS */
+        .menu {
+            clear: both;
+            
+            background-color: var(--main_orange);
+            li {
+              text-align: center;
+              border-bottom: 1px solid var(--border-gray);
+              a {
+                display: block;
+                padding: 10px 0;
+                font-size: 15px;
+                color:var(--text_withe);
+                &:hover {
+                  background-color: #fff ;
+                  color:var(--border-gray);
+                }
+              }
+            }
+          }
+    
+        .menu {
+            max-height: 0;
+            margin-top: 1px;
+            
+            overflow: hidden;
+          }
+    
+        input:checked ~ .menu {
+            max-height: 205px;
+          }
+          
+    
+        #navBar .logo {
+          color: var(--text_withe);
+          display: flex;
+          justify-content: center;
+        }
+    
+        
+        /* 個別商品資訊的RWD */
+        #mainSection{
+            margin: 65px 10px;
+            padding-left: 10px;
+            display: flex;
+            flex-direction: column;
+          }
+     
+          #mainSection #mainSectionImg {
+            display: flex;
+            flex-direction: column;
+            width: 430px;
+            justify-content: center;
+            padding-right: 20px;
+          }
+    
+          #mainSection #mainSectionImg img{
+            width: 90%;
+          }
+
+
+          #mainSection #mainSectionProductContent .mainSectionProductContentBigText{
+            font-weight: 600;
+            position: relative;
+            margin-bottom: 10px;
+            font-size: 20px;
+            margin-top: 15px;
+          }
+
+          #mainSectionProductContent >div:nth-child(2){
+            display: flex;
+            font-size:15px;
+          }
+
+          #mainSectionProductContent >div:nth-child(2)>span{
+            color: #84DA8C;
+          
+          }
+
+            
+        #mainSection #mainSectionProductContent .tag  {
+          display: flex;
+          justify-content:space-between;
+          width: 42%;
+          color: var(--main_orange);
+          font-weight: bold;
+          padding: 5px 0px;
+        }
+         
+        #mainSection #mainSectionProductContent .tag span{
+          border: 1px solid var(--main_orange);
+          border-radius: 10px;
+          display: flex;
+          justify-content:center;
+          padding: 5px 8px;
+          margin: 0px 5px;
+          font-size: 15px;
+        }
+    
+        #mainSectionProductContentSize{
+            display: flex;
+            flex-direction: column;
+            margin-top: 5px;
+          }
+
+          #mainSectionProductContentSize div:nth-child(1){
+            font-weight: 600;
+            margin-bottom: 5px;
+            display: flex;
+          }
+          
+          #mainSection #mainSectionProductContent .mainSectionProductContentIntroduction {
+            width: 80%;
+            display: flex;
+            flex-wrap: wrap;
+            padding-top: 10px;
+          }
+          
+          .mainSectionProductContentIntroduction div:nth-child(1){
+            font-weight: 600;
+          }
+
+          #mainSection #mainSectionProductContent #mainSectionProductContentBtn{
+            display: flex;
+            font-size: 20px;
+            margin-top: 5px;
+          }
+
+          #mainSection #mainSectionProductContent #mainSectionProductContentBtn >div{
+            display: flex;
+            border: 2px solid #000;  
+          }
+          
+          #mainSection #mainSectionProductContent #mainSectionProductContentBtn >div>div >button {
+          font-size: 16px;
+          background-color: var(--textWithe);
+          border: var(--textWithe);
+          font-weight: 600;
+          }
+          
+          #mainSection #mainSectionProductContent #mainSectionProductContentBtn >div>button{
+            font-size: 16px;
+            background-color: var(--text_withe);
+            border-top: var(--text_withe);
+            border-right: var(--text_withe);
+            border-bottom: var(--text_withe);
+            font-weight: 600;
+            padding:0px 15px;
+          }
+          
+          #mainSectionProductContentBtn>button{
+            display: flex;
+            margin-left: 25px;
+            width: 20%;
+            height: 33px;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            background-color: black;
+            color: var(--text_withe);
+          
+          }
+
+
+          /* 您可能會喜歡區的CSS */
+  
+           #mainSectionProductCards {
+            width:90%;
+           padding-left: 0.5%;
+            display: flex;
+            flex-direction: column;
+          }
+
+          #mainSectionProductCards >div:nth-child(1){
+            font-weight: 600;
+            font-size: 17px;
+            align-items: center;
+            padding-left: 40px;
+            display: flex;
+          }
+
+          #mainSectionProductCards div{
+            justify-content: center;
+            display: flex;
+            width: 80%;
+          }
+
+           #mainSectionProductCards .card {
+            width: 175px;
+            height: 300px;
+            margin: 0 9px 0px 30px;
+            flex-direction: column;
+            padding-left: 50px;
+            padding-top: 5px;
+          }
+
+           #mainSectionProductCards .card img {
+            width: 150px;
+            height: 160px;
+            border: 1px solid black;
+          }
+
+           #mainSectionProductCards .card .cardName {
+            font-weight: 600;
+            font-size: 16px;
+            margin-left: 1px;
+            padding-top: 5px;
+          }
+
+          #mainSectionProductCards .card input{
+           padding-right: 20px;
+           margin-right: 20px;
+          }
+
+          #mainSectionProductCards .card .cardBtn{
+            align-self: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-right: 21px;
+            width: 100%;
+            padding-top: 5px;
+          }
+
+          .cardChangeBtn:nth-child(1){
+            position: relative;
+            top: 100px;
+            background-color: var(--textWithe);
+            border: none;
+            display: flex;
+            left: 40px;
+           }
+          
+           .cardChangeBtn:last-child{
+            position: relative;
+            left:4px;
+            background-color: var(--textWithe);
+            border: none;
+            display: flex;
+            top: 100px;
+           }
+
+
+           /* 使用心得的CSS */
+           #mainSectionCommentCards {
+            /* width:50%; */
+           padding-bottom: 35px;
+           /* padding-top: 1%; */
+            display: flex;
+            flex-direction: column;
+            /* align-items: center;
+            align-self: center;
+            justify-content: center; */
+          }
+
+          #mainSectionCommentCards >div:nth-child(1){
+            font-weight: 600;
+            font-size: 17px;
+            /* align-items:stretch; */
+            margin-right: 83px;
+            display: flex;
+          }
+
+          #mainSectionCommentCards >div:nth-child(2){
+            font-weight: 550;
+            align-items: center;
+            /* padding-left: 650px; */
+            margin-left: 30px;
+            display: flex;
+            width: 70%;
+            height: 250px;
+            /* justify-content: space-between; */
+            background-color: var(--text_withe);
+            border-radius: 50px;
+            box-shadow: 15px 15px 4px 0px var(--main_orange);
+          }
+          
+          #mainSectionCommentCards div{
+            justify-content: center;
+            display: flex;
+            /* width: 100%; */
+          }
+          
+          #mainSectionCommentCards .card {
+            
+            height: 100px;
+            flex-direction: column;
+            /* position: relative; */
+            /* right: 205px; */
+            /* top: 200px; */
+            display: flex;
+            align-items: center;
+          }
+            
+          #mainSectionCommentCards .card img {
+            width: 50px;
+            height: 60px;
+            border: 1px solid black;
+          }
+          
+          #mainSectionCommentCards .card input{
+            margin-top: 10px;
+            margin-left: 4px;
+            
+           }
+          
+           #mainSectionCommentCards .card div:nth-child(3){
+            display: flex;
+            flex-wrap: wrap;
+            font-size: 13px;
+           }
+
+           .CommentChangeBtn:nth-child(1){
+            position: relative;
+            right:15px;
+            background-color: var(--text_withe);
+            border: none;
+            display: flex;
+            width: 15%;
+            
+           }
+          
+           .CommentChangeBtn:last-child{
+            position: relative;
+            left:65px;
+            background-color: var(--text_withe);
+            border: none;
+            display: flex;
+            width: 15%;
+           }
+
+        /* 網頁底的CSS */
+        footer {
+            height: 100px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            background-color: var(--main_orange);
+            color: var(--text_withe);
+          }
+          footer .logo {
+            color: var(--text_withe);
+            font-weight: 900;
+            text-align: center;
+            -webkit-user-select: none;
+               -moz-user-select: none;
+                    user-select: none;
+          }
+          footer #foot_sub {
+            width: 200px;
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+          }
+          footer #foot_sub input {
+            border-radius: 25px;
+            border: none;
+            outline: none;
+            height: 20px;
+          }
+          footer #foot_sub button {
+            border-radius: 25px;
+            padding: 0 10px;
+            white-space: nowrap;
+            border: 1px solid var(--border-gray);
+            background-color: var(--main_orange);
+            color: var(--text_withe);
+            outline: none;
+            margin-left: -20px;
+            height: 25px;
+          }
+
+
+    }
+    
+  
+    /*# sourceMappingURL=product_section.css.map */
+    
+  

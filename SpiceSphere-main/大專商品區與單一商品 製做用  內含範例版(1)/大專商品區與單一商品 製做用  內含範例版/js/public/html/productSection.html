@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/productSection.css">
+</head>
+<!-- 
+    1.把CSS分開\/
+    2.更改命名，圖也要改名
+    3.調整成範例
+    4.調整圖與文字大小
+ -->
+
+
+<body>
+    <!-- 導覽列與大圖 -->
+
+    <nav id="navBar">
+        <div>
+          <a class="logo" href="">SPICESPHERE</a>
+        </div>
+  
+        <div id="navRight">
+          <a href="">探索食譜</a>
+          <a href="">產品介紹</a>
+          <a href="">購物車</a>
+          <a href="">會員登入</a>
+          <div>
+            <img  src="./img/navImg.png" alt="">
+          </div>
+        </div>
+    </nav>
+  
+      <div id="sloganSection">
+        <div>
+          <p>COOKING</p>
+          <p>
+            High-quality cooking wear, such as non-stick pans and stainless steel
+            pots, enhances the culinary experience by providing durability, even
+            heat distribution, and easy cleanup.
+          </p>
+        </div>
+      </div>
+
+      <!-- 網頁篩選與商品區 -->
+
+      <div id="mainSection">
+        <div id="mainSectionSearch">
+          <div class="searchBar">
+            <input type="text" placeholder="搜尋" />
+            <button>搜索</button>
+          </div>
+          <div>
+            <div class="mainSectionSearchTitle">價格</div>
+            
+            <div class="rangeLabels">
+              <span>0</span>
+              <span>5000</span>
+            </div>
+            <input
+              class="rangeContainer"
+              type="range"
+              min="0"
+              max="5000"
+              step="10"
+            />
+          </div>
+          <div class="mainSectionSearchTitle">用途</div>
+          <div class="checkboxContainer">
+            <div>
+              <input type="checkbox" /><label for="">鍋子</label>
+              <input type="checkbox" /><label for="">盤子</label>
+              <input type="checkbox" /><label for="">刀具組</label>
+            </div>
+            <div>
+              <input type="checkbox" /><label for="">調理包</label>
+              <input type="checkbox" /><label for="">清潔</label>
+              <input type="checkbox" /><label for="">其他</label>
+            </div>
+          </div>
+          <div class="mainSectionSearchTitle">評分</div>
+          <hr />
+          <input class="rangeContainer" type="range" min="1" max="5" step="0.5" />
+        </div>
+    
+        <!-- 商品欄 -->
+        <div id="mainSectionProductCards">
+          <div class="card">
+            <a href="">
+              <div class="cardImg"><img src="./img/test_card.jpg" /></div>
+              <div class="cardName">鍋子</div>
+              <div class="cardPrice">$200</div>
+              <hr />
+            </a>
+            <div class="cardBtn">
+              <button>
+                <?xml version="1.0" encoding="UTF-8"?>
+                <svg width="24px" height="24px" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000">
+                  <path d="M12 12C14.2091 12 16 10.2091 16 8C16 5.79086 14.2091 4 12 4C9.79086 4 8 5.79086 8 8C8 10.2091 9.79086 12 12 12Z" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M22 17.2798C22 17.8812 21.7625 18.4588 21.3383 18.8861C20.3619 19.8701 19.415 20.8961 18.4021 21.8443C18.17 22.0585 17.8017 22.0507 17.5795 21.8268L14.6615 18.8861C13.7795 17.9972 13.7795 16.5623 14.6615 15.6734C15.5522 14.7758 17.0032 14.7758 17.8938 15.6734L17.9999 15.7803L18.1059 15.6734C18.533 15.2429 19.1146 15 19.7221 15C20.3297 15 20.9113 15.2428 21.3383 15.6734C21.7625 16.1007 22 16.6784 22 17.2798Z" stroke="#000000" stroke-width="1.5" stroke-linejoin="round"></path><path d="M5 20V19C5 15.134 8.13401 12 12 12C13.0736 12 14.0907 12.2417 15 12.6736" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </button>
+              
+              <button>
+                <?xml version="1.0" encoding="UTF-8"?>
+                <svg width="24px" height="24px" stroke-width="1.5" 
+                viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" 
+                color="#000000">
+                <path d="M19.5 22C20.3284 22 21 21.3284 21 20.5C21 19.6716 20.3284
+                 19 19.5 19C18.6716 19 18 19.6716 18 20.5C18 21.3284 18.6716 22 19.5 
+                 22Z" fill="#000000" stroke="#000000" stroke-width="1.5" stroke-linecap="round" 
+                 stroke-linejoin="round">
+                </path>
+                <path d="M9.5 22C10.3284 22 11 21.3284 11 20.5C11 
+                 19.6716 10.3284 19 9.5 19C8.67157 19 8 19.6716 8 20.5C8 21.3284 8.67157 22 9.5 22Z"
+                  fill="#000000" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                </path>
+                <path d="M5 4H22L20 15H7L5 4ZM5 4C4.83333 3.33333 4 2 2 2" stroke="#000000"
+                 stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M20 15H7H5.23077C3.44646 
+                 15 2.5 15.7812 2.5 17C2.5 18.2188 3.44646 19 5.23077 19H19.5" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                </path>
+              </svg>  
+              </button>
+            </div>
+          </div>
+          <div class="card">
+            <a href="">
+              <div class="cardImg"><img src="./img/test_card.jpg" /></div>
+              <div class="cardName">鍋子</div>
+              <div class="cardPrice">$200</div>
+              <hr />
+            </a>
+            <div class="cardBtn">
+              <button>
+                <?xml version="1.0" encoding="UTF-8"?>
+                <svg width="24px" height="24px" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000">
+                  <path d="M12 12C14.2091 12 16 10.2091 16 8C16 5.79086 14.2091 4 12 4C9.79086 4 8 5.79086 8 8C8 10.2091 9.79086 12 12 12Z" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M22 17.2798C22 17.8812 21.7625 18.4588 21.3383 18.8861C20.3619 19.8701 19.415 20.8961 18.4021 21.8443C18.17 22.0585 17.8017 22.0507 17.5795 21.8268L14.6615 18.8861C13.7795 17.9972 13.7795 16.5623 14.6615 15.6734C15.5522 14.7758 17.0032 14.7758 17.8938 15.6734L17.9999 15.7803L18.1059 15.6734C18.533 15.2429 19.1146 15 19.7221 15C20.3297 15 20.9113 15.2428 21.3383 15.6734C21.7625 16.1007 22 16.6784 22 17.2798Z" stroke="#000000" stroke-width="1.5" stroke-linejoin="round"></path><path d="M5 20V19C5 15.134 8.13401 12 12 12C13.0736 12 14.0907 12.2417 15 12.6736" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </button>
+              <button>
+                <?xml version="1.0" encoding="UTF-8"?>
+                <svg width="24px" height="24px" stroke-width="1.5" 
+                viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" 
+                color="#000000">
+                <path d="M19.5 22C20.3284 22 21 21.3284 21 20.5C21 19.6716 20.3284
+                 19 19.5 19C18.6716 19 18 19.6716 18 20.5C18 21.3284 18.6716 22 19.5 
+                 22Z" fill="#000000" stroke="#000000" stroke-width="1.5" stroke-linecap="round" 
+                 stroke-linejoin="round">
+                </path>
+                <path d="M9.5 22C10.3284 22 11 21.3284 11 20.5C11 
+                 19.6716 10.3284 19 9.5 19C8.67157 19 8 19.6716 8 20.5C8 21.3284 8.67157 22 9.5 22Z"
+                  fill="#000000" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                </path>
+                <path d="M5 4H22L20 15H7L5 4ZM5 4C4.83333 3.33333 4 2 2 2" stroke="#000000"
+                 stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M20 15H7H5.23077C3.44646 
+                 15 2.5 15.7812 2.5 17C2.5 18.2188 3.44646 19 5.23077 19H19.5" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                </path>
+              </svg>
+              </button>
+            </div>
+          </div>
+          <div class="card">
+            <a href="">
+              <div class="cardImg"><img src="./img/test_card.jpg" /></div>
+              <div class="cardName">鍋子</div>
+              <div class="cardPrice">$200</div>
+              <hr />
+            </a>
+            <div class="cardBtn">
+              <button>
+                <?xml version="1.0" encoding="UTF-8"?>
+                <svg width="24px" height="24px" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000">
+                  <path d="M12 12C14.2091 12 16 10.2091 16 8C16 5.79086 14.2091 4 12 4C9.79086 4 8 5.79086 8 8C8 10.2091 9.79086 12 12 12Z" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M22 17.2798C22 17.8812 21.7625 18.4588 21.3383 18.8861C20.3619 19.8701 19.415 20.8961 18.4021 21.8443C18.17 22.0585 17.8017 22.0507 17.5795 21.8268L14.6615 18.8861C13.7795 17.9972 13.7795 16.5623 14.6615 15.6734C15.5522 14.7758 17.0032 14.7758 17.8938 15.6734L17.9999 15.7803L18.1059 15.6734C18.533 15.2429 19.1146 15 19.7221 15C20.3297 15 20.9113 15.2428 21.3383 15.6734C21.7625 16.1007 22 16.6784 22 17.2798Z" stroke="#000000" stroke-width="1.5" stroke-linejoin="round"></path><path d="M5 20V19C5 15.134 8.13401 12 12 12C13.0736 12 14.0907 12.2417 15 12.6736" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </button>
+              <button>
+                <?xml version="1.0" encoding="UTF-8"?>
+                <svg width="24px" height="24px" stroke-width="1.5" 
+                viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" 
+                color="#000000">
+                <path d="M19.5 22C20.3284 22 21 21.3284 21 20.5C21 19.6716 20.3284
+                 19 19.5 19C18.6716 19 18 19.6716 18 20.5C18 21.3284 18.6716 22 19.5 
+                 22Z" fill="#000000" stroke="#000000" stroke-width="1.5" stroke-linecap="round" 
+                 stroke-linejoin="round">
+                </path>
+                <path d="M9.5 22C10.3284 22 11 21.3284 11 20.5C11 
+                 19.6716 10.3284 19 9.5 19C8.67157 19 8 19.6716 8 20.5C8 21.3284 8.67157 22 9.5 22Z"
+                  fill="#000000" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                </path>
+                <path d="M5 4H22L20 15H7L5 4ZM5 4C4.83333 3.33333 4 2 2 2" stroke="#000000"
+                 stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M20 15H7H5.23077C3.44646 
+                 15 2.5 15.7812 2.5 17C2.5 18.2188 3.44646 19 5.23077 19H19.5" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                </path>
+              </svg>
+              </button>
+            </div>
+          </div>
+          <div class="card">
+            <a href="">
+              <div class="cardImg"><img src="./img/test_card.jpg" /></div>
+              <div class="cardName">鍋子</div>
+              <div class="cardPrice">$200</div>
+              <hr />
+            </a>
+            <div class="cardBtn">
+              <button>
+                <?xml version="1.0" encoding="UTF-8"?>
+                <svg width="24px" height="24px" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000">
+                  <path d="M12 12C14.2091 12 16 10.2091 16 8C16 5.79086 14.2091 4 12 4C9.79086 4 8 5.79086 8 8C8 10.2091 9.79086 12 12 12Z" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M22 17.2798C22 17.8812 21.7625 18.4588 21.3383 18.8861C20.3619 19.8701 19.415 20.8961 18.4021 21.8443C18.17 22.0585 17.8017 22.0507 17.5795 21.8268L14.6615 18.8861C13.7795 17.9972 13.7795 16.5623 14.6615 15.6734C15.5522 14.7758 17.0032 14.7758 17.8938 15.6734L17.9999 15.7803L18.1059 15.6734C18.533 15.2429 19.1146 15 19.7221 15C20.3297 15 20.9113 15.2428 21.3383 15.6734C21.7625 16.1007 22 16.6784 22 17.2798Z" stroke="#000000" stroke-width="1.5" stroke-linejoin="round"></path><path d="M5 20V19C5 15.134 8.13401 12 12 12C13.0736 12 14.0907 12.2417 15 12.6736" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </button>
+              <button>
+                <?xml version="1.0" encoding="UTF-8"?>
+                <svg width="24px" height="24px" stroke-width="1.5" 
+                viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" 
+                color="#000000">
+                <path d="M19.5 22C20.3284 22 21 21.3284 21 20.5C21 19.6716 20.3284
+                 19 19.5 19C18.6716 19 18 19.6716 18 20.5C18 21.3284 18.6716 22 19.5 
+                 22Z" fill="#000000" stroke="#000000" stroke-width="1.5" stroke-linecap="round" 
+                 stroke-linejoin="round">
+                </path>
+                <path d="M9.5 22C10.3284 22 11 21.3284 11 20.5C11 
+                 19.6716 10.3284 19 9.5 19C8.67157 19 8 19.6716 8 20.5C8 21.3284 8.67157 22 9.5 22Z"
+                  fill="#000000" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                </path>
+                <path d="M5 4H22L20 15H7L5 4ZM5 4C4.83333 3.33333 4 2 2 2" stroke="#000000"
+                 stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M20 15H7H5.23077C3.44646 
+                 15 2.5 15.7812 2.5 17C2.5 18.2188 3.44646 19 5.23077 19H19.5" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                </path>
+              </svg>
+              </button>
+            </div>
+          </div>
+          <div class="card">
+            <a href="">
+              <div class="cardImg"><img src="./img/test_card.jpg" /></div>
+              <div class="cardName">鍋子</div>
+              <div class="cardPrice">$200</div>
+              <hr />
+            </a>
+            <div class="cardBtn">
+              <button>
+                <?xml version="1.0" encoding="UTF-8"?>
+                <svg width="24px" height="24px" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000">
+                  <path d="M12 12C14.2091 12 16 10.2091 16 8C16 5.79086 14.2091 4 12 4C9.79086 4 8 5.79086 8 8C8 10.2091 9.79086 12 12 12Z" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M22 17.2798C22 17.8812 21.7625 18.4588 21.3383 18.8861C20.3619 19.8701 19.415 20.8961 18.4021 21.8443C18.17 22.0585 17.8017 22.0507 17.5795 21.8268L14.6615 18.8861C13.7795 17.9972 13.7795 16.5623 14.6615 15.6734C15.5522 14.7758 17.0032 14.7758 17.8938 15.6734L17.9999 15.7803L18.1059 15.6734C18.533 15.2429 19.1146 15 19.7221 15C20.3297 15 20.9113 15.2428 21.3383 15.6734C21.7625 16.1007 22 16.6784 22 17.2798Z" stroke="#000000" stroke-width="1.5" stroke-linejoin="round"></path><path d="M5 20V19C5 15.134 8.13401 12 12 12C13.0736 12 14.0907 12.2417 15 12.6736" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </button>
+              <button>
+                <?xml version="1.0" encoding="UTF-8"?>
+                <svg width="24px" height="24px" stroke-width="1.5" 
+                viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" 
+                color="#000000">
+                <path d="M19.5 22C20.3284 22 21 21.3284 21 20.5C21 19.6716 20.3284
+                 19 19.5 19C18.6716 19 18 19.6716 18 20.5C18 21.3284 18.6716 22 19.5 
+                 22Z" fill="#000000" stroke="#000000" stroke-width="1.5" stroke-linecap="round" 
+                 stroke-linejoin="round">
+                </path>
+                <path d="M9.5 22C10.3284 22 11 21.3284 11 20.5C11 
+                 19.6716 10.3284 19 9.5 19C8.67157 19 8 19.6716 8 20.5C8 21.3284 8.67157 22 9.5 22Z"
+                  fill="#000000" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                </path>
+                <path d="M5 4H22L20 15H7L5 4ZM5 4C4.83333 3.33333 4 2 2 2" stroke="#000000"
+                 stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M20 15H7H5.23077C3.44646 
+                 15 2.5 15.7812 2.5 17C2.5 18.2188 3.44646 19 5.23077 19H19.5" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                </path>
+              </svg>
+              </button>
+            </div>
+          </div>
+          <div class="card">
+            <a href="">
+              <div class="cardImg"><img src="./img/test_card.jpg" /></div>
+              <div class="cardName">鍋子</div>
+              <div class="cardPrice">$200</div>
+              <hr />
+            </a>
+            <div class="cardBtn">
+              <button>
+                <?xml version="1.0" encoding="UTF-8"?>
+                <svg width="24px" height="24px" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000">
+                  <path d="M12 12C14.2091 12 16 10.2091 16 8C16 5.79086 14.2091 4 12 4C9.79086 4 8 5.79086 8 8C8 10.2091 9.79086 12 12 12Z" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M22 17.2798C22 17.8812 21.7625 18.4588 21.3383 18.8861C20.3619 19.8701 19.415 20.8961 18.4021 21.8443C18.17 22.0585 17.8017 22.0507 17.5795 21.8268L14.6615 18.8861C13.7795 17.9972 13.7795 16.5623 14.6615 15.6734C15.5522 14.7758 17.0032 14.7758 17.8938 15.6734L17.9999 15.7803L18.1059 15.6734C18.533 15.2429 19.1146 15 19.7221 15C20.3297 15 20.9113 15.2428 21.3383 15.6734C21.7625 16.1007 22 16.6784 22 17.2798Z" stroke="#000000" stroke-width="1.5" stroke-linejoin="round"></path><path d="M5 20V19C5 15.134 8.13401 12 12 12C13.0736 12 14.0907 12.2417 15 12.6736" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </button>
+              <button>
+                <?xml version="1.0" encoding="UTF-8"?>
+                <svg width="24px" height="24px" stroke-width="1.5" 
+                viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" 
+                color="#000000">
+                <path d="M19.5 22C20.3284 22 21 21.3284 21 20.5C21 19.6716 20.3284
+                 19 19.5 19C18.6716 19 18 19.6716 18 20.5C18 21.3284 18.6716 22 19.5 
+                 22Z" fill="#000000" stroke="#000000" stroke-width="1.5" stroke-linecap="round" 
+                 stroke-linejoin="round">
+                </path>
+                <path d="M9.5 22C10.3284 22 11 21.3284 11 20.5C11 
+                 19.6716 10.3284 19 9.5 19C8.67157 19 8 19.6716 8 20.5C8 21.3284 8.67157 22 9.5 22Z"
+                  fill="#000000" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                </path>
+                <path d="M5 4H22L20 15H7L5 4ZM5 4C4.83333 3.33333 4 2 2 2" stroke="#000000"
+                 stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M20 15H7H5.23077C3.44646 
+                 15 2.5 15.7812 2.5 17C2.5 18.2188 3.44646 19 5.23077 19H19.5" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                </path>
+              </svg>
+              </button>
+            </div>
+          </div>
+          <div class="card">
+            <a href="">
+              <div class="cardImg"><img src="./img/test_card.jpg" /></div>
+              <div class="cardName">鍋子</div>
+              <div class="cardPrice">$200</div>
+              <hr />
+            </a>
+            <div class="cardBtn">
+              <button>
+                <?xml version="1.0" encoding="UTF-8"?>
+                <svg width="24px" height="24px" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000">
+                  <path d="M12 12C14.2091 12 16 10.2091 16 8C16 5.79086 14.2091 4 12 4C9.79086 4 8 5.79086 8 8C8 10.2091 9.79086 12 12 12Z" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M22 17.2798C22 17.8812 21.7625 18.4588 21.3383 18.8861C20.3619 19.8701 19.415 20.8961 18.4021 21.8443C18.17 22.0585 17.8017 22.0507 17.5795 21.8268L14.6615 18.8861C13.7795 17.9972 13.7795 16.5623 14.6615 15.6734C15.5522 14.7758 17.0032 14.7758 17.8938 15.6734L17.9999 15.7803L18.1059 15.6734C18.533 15.2429 19.1146 15 19.7221 15C20.3297 15 20.9113 15.2428 21.3383 15.6734C21.7625 16.1007 22 16.6784 22 17.2798Z" stroke="#000000" stroke-width="1.5" stroke-linejoin="round"></path><path d="M5 20V19C5 15.134 8.13401 12 12 12C13.0736 12 14.0907 12.2417 15 12.6736" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </button>
+              <button>
+                <?xml version="1.0" encoding="UTF-8"?>
+                <svg width="24px" height="24px" stroke-width="1.5" 
+                viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" 
+                color="#000000">
+                <path d="M19.5 22C20.3284 22 21 21.3284 21 20.5C21 19.6716 20.3284
+                 19 19.5 19C18.6716 19 18 19.6716 18 20.5C18 21.3284 18.6716 22 19.5 
+                 22Z" fill="#000000" stroke="#000000" stroke-width="1.5" stroke-linecap="round" 
+                 stroke-linejoin="round">
+                </path>
+                <path d="M9.5 22C10.3284 22 11 21.3284 11 20.5C11 
+                 19.6716 10.3284 19 9.5 19C8.67157 19 8 19.6716 8 20.5C8 21.3284 8.67157 22 9.5 22Z"
+                  fill="#000000" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                </path>
+                <path d="M5 4H22L20 15H7L5 4ZM5 4C4.83333 3.33333 4 2 2 2" stroke="#000000"
+                 stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M20 15H7H5.23077C3.44646 
+                 15 2.5 15.7812 2.5 17C2.5 18.2188 3.44646 19 5.23077 19H19.5" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                </path>
+              </svg>
+              </button>
+            </div>
+          </div>
+          <div class="card">
+            <a href="">
+              <div class="cardImg"><img src="./img/test_card.jpg" /></div>
+              <div class="cardName">鍋子</div>
+              <div class="cardPrice">$200</div>
+              <hr />
+            </a>
+            <div class="cardBtn">
+              <button>
+                <?xml version="1.0" encoding="UTF-8"?>
+                <svg width="24px" height="24px" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000">
+                  <path d="M12 12C14.2091 12 16 10.2091 16 8C16 5.79086 14.2091 4 12 4C9.79086 4 8 5.79086 8 8C8 10.2091 9.79086 12 12 12Z" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M22 17.2798C22 17.8812 21.7625 18.4588 21.3383 18.8861C20.3619 19.8701 19.415 20.8961 18.4021 21.8443C18.17 22.0585 17.8017 22.0507 17.5795 21.8268L14.6615 18.8861C13.7795 17.9972 13.7795 16.5623 14.6615 15.6734C15.5522 14.7758 17.0032 14.7758 17.8938 15.6734L17.9999 15.7803L18.1059 15.6734C18.533 15.2429 19.1146 15 19.7221 15C20.3297 15 20.9113 15.2428 21.3383 15.6734C21.7625 16.1007 22 16.6784 22 17.2798Z" stroke="#000000" stroke-width="1.5" stroke-linejoin="round"></path><path d="M5 20V19C5 15.134 8.13401 12 12 12C13.0736 12 14.0907 12.2417 15 12.6736" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </button>
+              <button>
+                <?xml version="1.0" encoding="UTF-8"?>
+                <svg width="24px" height="24px" stroke-width="1.5" 
+                viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" 
+                color="#000000">
+                <path d="M19.5 22C20.3284 22 21 21.3284 21 20.5C21 19.6716 20.3284
+                 19 19.5 19C18.6716 19 18 19.6716 18 20.5C18 21.3284 18.6716 22 19.5 
+                 22Z" fill="#000000" stroke="#000000" stroke-width="1.5" stroke-linecap="round" 
+                 stroke-linejoin="round">
+                </path>
+                <path d="M9.5 22C10.3284 22 11 21.3284 11 20.5C11 
+                 19.6716 10.3284 19 9.5 19C8.67157 19 8 19.6716 8 20.5C8 21.3284 8.67157 22 9.5 22Z"
+                  fill="#000000" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                </path>
+                <path d="M5 4H22L20 15H7L5 4ZM5 4C4.83333 3.33333 4 2 2 2" stroke="#000000"
+                 stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M20 15H7H5.23077C3.44646 
+                 15 2.5 15.7812 2.5 17C2.5 18.2188 3.44646 19 5.23077 19H19.5" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                </path>
+              </svg>
+              </button>
+            </div>
+          </div>
+          <div class="card">
+            <a href="">
+              <div class="cardImg"><img src="./img/test_card.jpg" /></div>
+              <div class="cardName">鍋子</div>
+              <div class="cardPrice">$200</div>
+              <hr />
+            </a>
+            <div class="cardBtn">
+              <button>
+                <?xml version="1.0" encoding="UTF-8"?>
+                <svg width="24px" height="24px" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000">
+                  <path d="M12 12C14.2091 12 16 10.2091 16 8C16 5.79086 14.2091 4 12 4C9.79086 4 8 5.79086 8 8C8 10.2091 9.79086 12 12 12Z" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M22 17.2798C22 17.8812 21.7625 18.4588 21.3383 18.8861C20.3619 19.8701 19.415 20.8961 18.4021 21.8443C18.17 22.0585 17.8017 22.0507 17.5795 21.8268L14.6615 18.8861C13.7795 17.9972 13.7795 16.5623 14.6615 15.6734C15.5522 14.7758 17.0032 14.7758 17.8938 15.6734L17.9999 15.7803L18.1059 15.6734C18.533 15.2429 19.1146 15 19.7221 15C20.3297 15 20.9113 15.2428 21.3383 15.6734C21.7625 16.1007 22 16.6784 22 17.2798Z" stroke="#000000" stroke-width="1.5" stroke-linejoin="round"></path><path d="M5 20V19C5 15.134 8.13401 12 12 12C13.0736 12 14.0907 12.2417 15 12.6736" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </button>
+              <button>
+                <?xml version="1.0" encoding="UTF-8"?>
+                <svg width="24px" height="24px" stroke-width="1.5" 
+                viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" 
+                color="#000000">
+                <path d="M19.5 22C20.3284 22 21 21.3284 21 20.5C21 19.6716 20.3284
+                 19 19.5 19C18.6716 19 18 19.6716 18 20.5C18 21.3284 18.6716 22 19.5 
+                 22Z" fill="#000000" stroke="#000000" stroke-width="1.5" stroke-linecap="round" 
+                 stroke-linejoin="round">
+                </path>
+                <path d="M9.5 22C10.3284 22 11 21.3284 11 20.5C11 
+                 19.6716 10.3284 19 9.5 19C8.67157 19 8 19.6716 8 20.5C8 21.3284 8.67157 22 9.5 22Z"
+                  fill="#000000" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                </path>
+                <path d="M5 4H22L20 15H7L5 4ZM5 4C4.83333 3.33333 4 2 2 2" stroke="#000000"
+                 stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M20 15H7H5.23077C3.44646 
+                 15 2.5 15.7812 2.5 17C2.5 18.2188 3.44646 19 5.23077 19H19.5" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                </path>
+              </svg>
+              </button>
+            </div>
+          </div>
+          <div class="card">
+            <a href="">
+              <div class="cardImg"><img src="./img/test_card.jpg" /></div>
+              <div class="cardName">鍋子</div>
+              <div class="cardPrice">$200</div>
+              <hr />
+            </a>
+            <div class="cardBtn">
+              <button>
+                <?xml version="1.0" encoding="UTF-8"?>
+                <svg width="24px" height="24px" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000">
+                  <path d="M12 12C14.2091 12 16 10.2091 16 8C16 5.79086 14.2091 4 12 4C9.79086 4 8 5.79086 8 8C8 10.2091 9.79086 12 12 12Z" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M22 17.2798C22 17.8812 21.7625 18.4588 21.3383 18.8861C20.3619 19.8701 19.415 20.8961 18.4021 21.8443C18.17 22.0585 17.8017 22.0507 17.5795 21.8268L14.6615 18.8861C13.7795 17.9972 13.7795 16.5623 14.6615 15.6734C15.5522 14.7758 17.0032 14.7758 17.8938 15.6734L17.9999 15.7803L18.1059 15.6734C18.533 15.2429 19.1146 15 19.7221 15C20.3297 15 20.9113 15.2428 21.3383 15.6734C21.7625 16.1007 22 16.6784 22 17.2798Z" stroke="#000000" stroke-width="1.5" stroke-linejoin="round"></path><path d="M5 20V19C5 15.134 8.13401 12 12 12C13.0736 12 14.0907 12.2417 15 12.6736" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </button>
+              <button>
+                <?xml version="1.0" encoding="UTF-8"?>
+                <svg width="24px" height="24px" stroke-width="1.5" 
+                viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" 
+                color="#000000">
+                <path d="M19.5 22C20.3284 22 21 21.3284 21 20.5C21 19.6716 20.3284
+                 19 19.5 19C18.6716 19 18 19.6716 18 20.5C18 21.3284 18.6716 22 19.5 
+                 22Z" fill="#000000" stroke="#000000" stroke-width="1.5" stroke-linecap="round" 
+                 stroke-linejoin="round">
+                </path>
+                <path d="M9.5 22C10.3284 22 11 21.3284 11 20.5C11 
+                 19.6716 10.3284 19 9.5 19C8.67157 19 8 19.6716 8 20.5C8 21.3284 8.67157 22 9.5 22Z"
+                  fill="#000000" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                </path>
+                <path d="M5 4H22L20 15H7L5 4ZM5 4C4.83333 3.33333 4 2 2 2" stroke="#000000"
+                 stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M20 15H7H5.23077C3.44646 
+                 15 2.5 15.7812 2.5 17C2.5 18.2188 3.44646 19 5.23077 19H19.5" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                </path>
+              </svg>
+              </button>
+            </div>
+          </div>
+          <div class="card">
+            <a href="">
+              <div class="cardImg"><img src="./img/test_card.jpg" /></div>
+              <div class="cardName">鍋子</div>
+              <div class="cardPrice">$200</div>
+              <hr />
+            </a>
+            <div class="cardBtn">
+              <button>
+                <?xml version="1.0" encoding="UTF-8"?>
+                <svg width="24px" height="24px" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000">
+                  <path d="M12 12C14.2091 12 16 10.2091 16 8C16 5.79086 14.2091 4 12 4C9.79086 4 8 5.79086 8 8C8 10.2091 9.79086 12 12 12Z" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M22 17.2798C22 17.8812 21.7625 18.4588 21.3383 18.8861C20.3619 19.8701 19.415 20.8961 18.4021 21.8443C18.17 22.0585 17.8017 22.0507 17.5795 21.8268L14.6615 18.8861C13.7795 17.9972 13.7795 16.5623 14.6615 15.6734C15.5522 14.7758 17.0032 14.7758 17.8938 15.6734L17.9999 15.7803L18.1059 15.6734C18.533 15.2429 19.1146 15 19.7221 15C20.3297 15 20.9113 15.2428 21.3383 15.6734C21.7625 16.1007 22 16.6784 22 17.2798Z" stroke="#000000" stroke-width="1.5" stroke-linejoin="round"></path><path d="M5 20V19C5 15.134 8.13401 12 12 12C13.0736 12 14.0907 12.2417 15 12.6736" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </button>
+              <button>
+                <?xml version="1.0" encoding="UTF-8"?>
+                <svg width="24px" height="24px" stroke-width="1.5" 
+                viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" 
+                color="#000000">
+                <path d="M19.5 22C20.3284 22 21 21.3284 21 20.5C21 19.6716 20.3284
+                 19 19.5 19C18.6716 19 18 19.6716 18 20.5C18 21.3284 18.6716 22 19.5 
+                 22Z" fill="#000000" stroke="#000000" stroke-width="1.5" stroke-linecap="round" 
+                 stroke-linejoin="round">
+                </path>
+                <path d="M9.5 22C10.3284 22 11 21.3284 11 20.5C11 
+                 19.6716 10.3284 19 9.5 19C8.67157 19 8 19.6716 8 20.5C8 21.3284 8.67157 22 9.5 22Z"
+                  fill="#000000" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                </path>
+                <path d="M5 4H22L20 15H7L5 4ZM5 4C4.83333 3.33333 4 2 2 2" stroke="#000000"
+                 stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M20 15H7H5.23077C3.44646 
+                 15 2.5 15.7812 2.5 17C2.5 18.2188 3.44646 19 5.23077 19H19.5" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                </path>
+              </svg>
+              </button>
+            </div>
+          </div>
+          <div class="card">
+            <a href="">
+              <div class="cardImg"><img src="./img/test_card.jpg" /></div>
+              <div class="cardName">鍋子</div>
+              <div class="cardPrice">$200</div>
+              <hr />
+            </a>
+            <div class="cardBtn">
+              <button>
+                <?xml version="1.0" encoding="UTF-8"?>
+                <svg width="24px" height="24px" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000">
+                  <path d="M12 12C14.2091 12 16 10.2091 16 8C16 5.79086 14.2091 4 12 4C9.79086 4 8 5.79086 8 8C8 10.2091 9.79086 12 12 12Z" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M22 17.2798C22 17.8812 21.7625 18.4588 21.3383 18.8861C20.3619 19.8701 19.415 20.8961 18.4021 21.8443C18.17 22.0585 17.8017 22.0507 17.5795 21.8268L14.6615 18.8861C13.7795 17.9972 13.7795 16.5623 14.6615 15.6734C15.5522 14.7758 17.0032 14.7758 17.8938 15.6734L17.9999 15.7803L18.1059 15.6734C18.533 15.2429 19.1146 15 19.7221 15C20.3297 15 20.9113 15.2428 21.3383 15.6734C21.7625 16.1007 22 16.6784 22 17.2798Z" stroke="#000000" stroke-width="1.5" stroke-linejoin="round"></path><path d="M5 20V19C5 15.134 8.13401 12 12 12C13.0736 12 14.0907 12.2417 15 12.6736" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </button>
+              <button>
+                <?xml version="1.0" encoding="UTF-8"?>
+                <svg width="24px" height="24px" stroke-width="1.5" 
+                viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" 
+                color="#000000">
+                <path d="M19.5 22C20.3284 22 21 21.3284 21 20.5C21 19.6716 20.3284
+                 19 19.5 19C18.6716 19 18 19.6716 18 20.5C18 21.3284 18.6716 22 19.5 
+                 22Z" fill="#000000" stroke="#000000" stroke-width="1.5" stroke-linecap="round" 
+                 stroke-linejoin="round">
+                </path>
+                <path d="M9.5 22C10.3284 22 11 21.3284 11 20.5C11 
+                 19.6716 10.3284 19 9.5 19C8.67157 19 8 19.6716 8 20.5C8 21.3284 8.67157 22 9.5 22Z"
+                  fill="#000000" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                </path>
+                <path d="M5 4H22L20 15H7L5 4ZM5 4C4.83333 3.33333 4 2 2 2" stroke="#000000"
+                 stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M20 15H7H5.23077C3.44646 
+                 15 2.5 15.7812 2.5 17C2.5 18.2188 3.44646 19 5.23077 19H19.5" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                </path>
+              </svg>
+              </button>
+            </div>
+            
+          </div>
+          <div class="card">
+            <a href="">
+              <div class="cardImg"><img src="./img/test_card.jpg" /></div>
+              <div class="cardName">鍋子</div>
+              <div class="cardPrice">$200</div>
+              <hr />
+            </a>
+            <div class="cardBtn">
+              <button>
+                <?xml version="1.0" encoding="UTF-8"?>
+                <svg width="24px" height="24px" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000">
+                  <path d="M12 12C14.2091 12 16 10.2091 16 8C16 5.79086 14.2091 4 12 4C9.79086 4 8 5.79086 8 8C8 10.2091 9.79086 12 12 12Z" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M22 17.2798C22 17.8812 21.7625 18.4588 21.3383 18.8861C20.3619 19.8701 19.415 20.8961 18.4021 21.8443C18.17 22.0585 17.8017 22.0507 17.5795 21.8268L14.6615 18.8861C13.7795 17.9972 13.7795 16.5623 14.6615 15.6734C15.5522 14.7758 17.0032 14.7758 17.8938 15.6734L17.9999 15.7803L18.1059 15.6734C18.533 15.2429 19.1146 15 19.7221 15C20.3297 15 20.9113 15.2428 21.3383 15.6734C21.7625 16.1007 22 16.6784 22 17.2798Z" stroke="#000000" stroke-width="1.5" stroke-linejoin="round"></path><path d="M5 20V19C5 15.134 8.13401 12 12 12C13.0736 12 14.0907 12.2417 15 12.6736" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </button>
+              <button>
+                <?xml version="1.0" encoding="UTF-8"?>
+                <svg width="24px" height="24px" stroke-width="1.5" 
+                viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" 
+                color="#000000">
+                <path d="M19.5 22C20.3284 22 21 21.3284 21 20.5C21 19.6716 20.3284
+                 19 19.5 19C18.6716 19 18 19.6716 18 20.5C18 21.3284 18.6716 22 19.5 
+                 22Z" fill="#000000" stroke="#000000" stroke-width="1.5" stroke-linecap="round" 
+                 stroke-linejoin="round">
+                </path>
+                <path d="M9.5 22C10.3284 22 11 21.3284 11 20.5C11 
+                 19.6716 10.3284 19 9.5 19C8.67157 19 8 19.6716 8 20.5C8 21.3284 8.67157 22 9.5 22Z"
+                  fill="#000000" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                </path>
+                <path d="M5 4H22L20 15H7L5 4ZM5 4C4.83333 3.33333 4 2 2 2" stroke="#000000"
+                 stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M20 15H7H5.23077C3.44646 
+                 15 2.5 15.7812 2.5 17C2.5 18.2188 3.44646 19 5.23077 19H19.5" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                </path>
+              </svg>
+              </button>
+            </div>
+            
+          </div>
+          <div class="card">
+            <a href="">
+              <div class="cardImg"><img src="./img/test_card.jpg" /></div>
+              <div class="cardName">鍋子</div>
+              <div class="cardPrice">$200</div>
+              <hr />
+            </a>
+            <div class="cardBtn">
+              <button>
+                <?xml version="1.0" encoding="UTF-8"?>
+                <svg width="24px" height="24px" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000">
+                  <path d="M12 12C14.2091 12 16 10.2091 16 8C16 5.79086 14.2091 4 12 4C9.79086 4 8 5.79086 8 8C8 10.2091 9.79086 12 12 12Z" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M22 17.2798C22 17.8812 21.7625 18.4588 21.3383 18.8861C20.3619 19.8701 19.415 20.8961 18.4021 21.8443C18.17 22.0585 17.8017 22.0507 17.5795 21.8268L14.6615 18.8861C13.7795 17.9972 13.7795 16.5623 14.6615 15.6734C15.5522 14.7758 17.0032 14.7758 17.8938 15.6734L17.9999 15.7803L18.1059 15.6734C18.533 15.2429 19.1146 15 19.7221 15C20.3297 15 20.9113 15.2428 21.3383 15.6734C21.7625 16.1007 22 16.6784 22 17.2798Z" stroke="#000000" stroke-width="1.5" stroke-linejoin="round"></path><path d="M5 20V19C5 15.134 8.13401 12 12 12C13.0736 12 14.0907 12.2417 15 12.6736" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </button>
+              <button>
+                <?xml version="1.0" encoding="UTF-8"?>
+                <svg width="24px" height="24px" stroke-width="1.5" 
+                viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" 
+                color="#000000">
+                <path d="M19.5 22C20.3284 22 21 21.3284 21 20.5C21 19.6716 20.3284
+                 19 19.5 19C18.6716 19 18 19.6716 18 20.5C18 21.3284 18.6716 22 19.5 
+                 22Z" fill="#000000" stroke="#000000" stroke-width="1.5" stroke-linecap="round" 
+                 stroke-linejoin="round">
+                </path>
+                <path d="M9.5 22C10.3284 22 11 21.3284 11 20.5C11 
+                 19.6716 10.3284 19 9.5 19C8.67157 19 8 19.6716 8 20.5C8 21.3284 8.67157 22 9.5 22Z"
+                  fill="#000000" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                </path>
+                <path d="M5 4H22L20 15H7L5 4ZM5 4C4.83333 3.33333 4 2 2 2" stroke="#000000"
+                 stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M20 15H7H5.23077C3.44646 
+                 15 2.5 15.7812 2.5 17C2.5 18.2188 3.44646 19 5.23077 19H19.5" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                </path>
+              </svg>
+              </button>
+            </div>
+            
+          </div>
+          <div class="card">
+            <a href="">
+              <div class="cardImg"><img src="./img/test_card.jpg" /></div>
+              <div class="cardName">鍋子</div>
+              <div class="cardPrice">$200</div>
+              <hr />
+            </a>
+            <div class="cardBtn">
+              <button>
+                <?xml version="1.0" encoding="UTF-8"?>
+                <svg width="24px" height="24px" viewBox="0 0 24 24" stroke-width="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000">
+                  <path d="M12 12C14.2091 12 16 10.2091 16 8C16 5.79086 14.2091 4 12 4C9.79086 4 8 5.79086 8 8C8 10.2091 9.79086 12 12 12Z" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M22 17.2798C22 17.8812 21.7625 18.4588 21.3383 18.8861C20.3619 19.8701 19.415 20.8961 18.4021 21.8443C18.17 22.0585 17.8017 22.0507 17.5795 21.8268L14.6615 18.8861C13.7795 17.9972 13.7795 16.5623 14.6615 15.6734C15.5522 14.7758 17.0032 14.7758 17.8938 15.6734L17.9999 15.7803L18.1059 15.6734C18.533 15.2429 19.1146 15 19.7221 15C20.3297 15 20.9113 15.2428 21.3383 15.6734C21.7625 16.1007 22 16.6784 22 17.2798Z" stroke="#000000" stroke-width="1.5" stroke-linejoin="round"></path><path d="M5 20V19C5 15.134 8.13401 12 12 12C13.0736 12 14.0907 12.2417 15 12.6736" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </button>
+              <button>
+                <?xml version="1.0" encoding="UTF-8"?>
+                <svg width="24px" height="24px" stroke-width="1.5" 
+                viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" 
+                color="#000000">
+                <path d="M19.5 22C20.3284 22 21 21.3284 21 20.5C21 19.6716 20.3284
+                 19 19.5 19C18.6716 19 18 19.6716 18 20.5C18 21.3284 18.6716 22 19.5 
+                 22Z" fill="#000000" stroke="#000000" stroke-width="1.5" stroke-linecap="round" 
+                 stroke-linejoin="round">
+                </path>
+                <path d="M9.5 22C10.3284 22 11 21.3284 11 20.5C11 
+                 19.6716 10.3284 19 9.5 19C8.67157 19 8 19.6716 8 20.5C8 21.3284 8.67157 22 9.5 22Z"
+                  fill="#000000" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                </path>
+                <path d="M5 4H22L20 15H7L5 4ZM5 4C4.83333 3.33333 4 2 2 2" stroke="#000000"
+                 stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M20 15H7H5.23077C3.44646 
+                 15 2.5 15.7812 2.5 17C2.5 18.2188 3.44646 19 5.23077 19H19.5" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                </path>
+              </svg>
+              </button>
+            </div>
+            
+          </div>
+        </div>       
+      </div>
+      
+
+       <!-- 換頁按鈕 -->
+       <div id="pageChange">
+          <div class="pageChangeBtn">
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>
+              <img src="./img/pageChangeImg.png" alt="">
+              <img src="./img/pageChangeImg.png" alt="">
+            </button>
+          </div>
+       </div>
+       
+       
+      
+      
+
+</body>
+<footer>
+  <a class="logo" href="">SPICESPHERE</a>
+
+  <small id="footCopyright">© 2024 SPICESPHERE. All rights reserved.</small>
+  <div id="foot_sub">
+    <input type="email" placeholder="E-email" />
+    <button>訂閱</button>
+  </div>
+</footer>
+
+</html>

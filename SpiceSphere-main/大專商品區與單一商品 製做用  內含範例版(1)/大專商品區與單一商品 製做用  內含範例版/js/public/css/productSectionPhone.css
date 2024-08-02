@@ -1,0 +1,202 @@
+body {
+    margin: 0px;
+  }
+   
+  a {
+    text-decoration: none;
+    color: black;
+  }
+ 
+ 
+  * { 
+    box-sizing: border-box; 
+    }
+
+    ul {
+        list-style: none; 
+        padding-left: 0; 
+      }
+
+  :root {
+    --main_orange: rgb(243, 121, 36);
+    --text_withe: rgb(255, 255, 255);
+    --border-gray: rgb(128, 128, 128);
+  }
+  
+  @media screen and (max-width: 500px) {
+    #navBar {
+      background-color: var(--main_orange);
+      color: var(--text_withe);
+      display: flex;
+      justify-content: space-between;
+      padding: 0 20px;
+     
+    }
+
+    #navBar input[type=checkbox] {
+      display: none;
+    }
+
+    
+    /* 漢堡選單的CSS */
+    .menu {
+        clear: both;
+        
+        background-color: var(--main_orange);
+        li {
+          text-align: center;
+          border-bottom: 1px solid var(--border-gray);
+          a {
+            display: block;
+            padding: 10px 0;
+            font-size: 15px;
+            color:var(--text_withe);
+            &:hover {
+              background-color: #fff ;
+              color:var(--border-gray);
+            }
+          }
+        }
+      }
+
+    .menu {
+        max-height: 0;
+        margin-top: 1px;
+        
+        overflow: hidden;
+      }
+
+    input:checked ~ .menu {
+        max-height: 205px;
+      }
+      
+
+    #navBar .logo {
+      color: var(--text_withe);
+      display: flex;
+      justify-content: center;
+    }
+
+    /* 頁首大圖的文字CSS */
+    #sloganSection {
+      background-image: url(/exemple/img/main_img.jpg);
+      background-size: 520px 200px;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 180px;
+      display: flex;
+      align-items: center;
+    }
+    #sloganSection p {
+      color: var(--text_withe);
+      margin: 0px;
+      padding-left: 20px;
+    }
+    #sloganSection p:first-child {
+      font-weight: 600;
+      font-size: 20px;
+      padding-bottom: 20px;
+    }
+    #sloganSection p:last-child {
+      font-size: 14px;
+      width: 250px;
+    }
+
+    /* 下拉式篩選器的CSS */
+    #mainSection #mainSectionSearch .selectSection {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+    #mainSection #mainSectionSearch .selectSection select {
+      margin: 15px 5px;
+      border: none;
+    }
+
+
+    /* 商品的CSS */
+    #mainSection #mainSectionProductCards {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+    #mainSection #mainSectionProductCards .card {
+      width: 120px;
+      height: 180px;
+      margin: 10px 25px 10px 25px;
+      box-shadow: 0px 3px 3px  var(--border-gray);
+      /* box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); */
+    }
+    #mainSection #mainSectionProductCards .card img {
+      width: 120px;
+      height: 80px;
+      -o-object-fit: cover;
+         object-fit: cover;
+    }
+    #mainSection #mainSectionProductCards .card .cardName {
+      /* text-align:center; */
+      padding-left: 10px;
+      font-weight: 600;
+      font-size: 16px;
+    }
+    #mainSection #mainSectionProductCards .card .cardPrice {
+      padding-left: 10px;
+      font-weight: 600;
+      font-size: 12px;
+      color: var(--main_orange);
+    }
+    #mainSection #mainSectionProductCards .card hr {
+      width: 95%;
+      color:var(--border-gray);
+    }
+    #mainSection #mainSectionProductCards .card .cardBtn {
+      align-self: center;
+      display: flex;
+      justify-content:space-around;
+      align-items: center;
+    }
+
+
+    /* 網頁底的CSS */
+    footer {
+      height: 100px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      background-color: var(--main_orange);
+      color: var(--text_withe);
+    }
+    footer .logo {
+      color: var(--text_withe);
+      font-weight: 900;
+      text-align: center;
+      -webkit-user-select: none;
+         -moz-user-select: none;
+              user-select: none;
+    }
+    footer #foot_sub {
+      width: 200px;
+      display: flex;
+      align-items: center;
+      padding: 10px 0;
+    }
+    footer #foot_sub input {
+      border-radius: 25px;
+      border: none;
+      outline: none;
+      height: 20px;
+    }
+    footer #foot_sub button {
+      border-radius: 25px;
+      padding: 0 10px;
+      white-space: nowrap;
+      border: 1px solid var(--border-gray);
+      background-color: var(--main_orange);
+      color: var(--text_withe);
+      outline: none;
+      margin-left: -20px;
+      height: 25px;
+    }
+  }/*# sourceMappingURL=product_section_phone.css.map */

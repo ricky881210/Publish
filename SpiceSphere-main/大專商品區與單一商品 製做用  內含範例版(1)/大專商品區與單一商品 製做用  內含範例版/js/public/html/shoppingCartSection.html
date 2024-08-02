@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/shoppingCartSection.css">
+</head>
+
+
+
+
+
+<body>
+
+     <!-- 導覽列 -->
+    <nav id="navBar">
+        <div>
+          <a class="logo" href="">SPICESPHERE</a>
+        </div>
+  
+        <div id="navRight">
+          <a href="">探索食譜</a>
+          <a href="">產品介紹</a>
+          <a href="">購物車</a>
+          <a href="">會員登入</a>
+          <div>
+            <img  src="./img/navImg.png" alt="">
+          </div>
+        </div>
+    </nav>
+
+   <div id="mainSection">
+
+       <!-- mainSectionUserMaterial = mainSectionSearch -->
+        <div id="mainSectionUserMaterial">
+
+            <div class="recipientBar">
+
+                <div class="recipientBarTitle">收件地址</div>
+                <div class="recipientBarInputContainer">
+                    <div>
+                        <label for="">收件人</label>
+                        <input type="text" />
+
+                        <label for="">電子信箱</label>
+                        <input type="tel" />
+
+                        <label for="">市</label>
+                        <input type="text" />
+                    
+                    </div>
+                    <div>
+                        <label for="">電話</label>
+                        <input type="email" />
+
+                        <label for="">郵遞區號</label>
+                        <input type="text" />
+
+                        <div class="recipientBarInputContainerRightCorner">
+                            <div>
+                                <label for="">區</label>
+                                <input type="text" />
+                            </div>
+                            
+                            <div>
+                                <label for="">街</label>
+                                <input type="text" />
+                            </div>
+    
+                           <div>
+                            <label for="">號</label>
+                            <input type="text" />
+                           </div>                       
+                        </div>
+                     
+                    </div>
+
+                </div>
+                
+            </div>
+
+            <!-- 付款方式 -->
+            <div class="recipientBar">
+
+                <div class="recipientBarTitle">付款方式</div>
+                <div class="recipientBarPayContainer">
+                   
+                    <div>
+                        <input id="cashOnDelivery" type="radio">
+                        <label for="cashOnDelivery">貨到付款</label>
+                    </div>
+        
+                    <div>
+                        <input id="creditCard" type="radio">
+                        <label for="creditCard">信用卡</label>
+                    </div>
+        
+                    <div>
+                        <input id="creditCardInstallment" type="radio">
+                        <label for="creditCardInstallment">信用卡分期</label>
+                    </div>
+        
+                    <div>
+                        <input id="payStreet" type="radio">
+                        <label for="payStreet">街口支付</label>
+                    </div>
+
+                </div>
+                
+            </div>
+            
+
+        </div>
+
+
+        <!-- 購物車 -->
+        <div id="mainSectionProductCart">
+            <div class="recipientBarTitle">購物車</div>
+
+            <div class="mainSectionProductCartBar">
+
+                <div class="card">
+                    <!-- 商品 -->
+                    <div  class="cardImg">
+                        <img src="./img/test_card.jpg" alt="">
+                    </div>
+
+                    <div class="cardContent">
+                        <div>Sdfghjkasv</div>
+                        <div>SKU:01234</div>
+                        <div>$ 5,000</div>
+                    </div>
+                    <div  class="cardBtn">
+                        <button>-</button>
+                        <apan>1</apan>
+                        <button>+</button>
+                    </div>
+
+                     
+                </div>
+
+                <div class="card">
+                    <!-- 商品 -->
+                    <div  class="cardImg">
+                        <img src="./img/test_card.jpg" alt="">
+                    </div>
+
+                    <div class="cardContent">
+                        <div>Sdfghjkasv</div>
+                        <div>SKU:01234</div>
+                        <div>$ 5,000</div>
+                    </div>
+                    <div  class="cardBtn">
+                        <button>-</button>
+                        <apan>1</apan>
+                        <button>+</button>
+                    </div>
+
+                     
+                </div>
+
+                <div class="card">
+                    <!-- 商品 -->
+                    <div  class="cardImg">
+                        <img src="./img/test_card.jpg" alt="">
+                    </div>
+
+                    <div class="cardContent">
+                        <div>Sdfghjkasv</div>
+                        <div>SKU:01234</div>
+                        <div>$ 5,000</div>
+                    </div>
+                    <div  class="cardBtn">
+                        <button>-</button>
+                        <apan>1</apan>
+                        <button>+</button>
+                    </div>
+
+                     
+                </div>
+                
+                <div id="ProductCartBarPrice">
+                    <div>商品總金額</div>
+                    <div>運費總金額</div>
+
+                </div>
+
+                <div id="ProductCartBarTotalPayPrice">
+                    <div>總付款金額</div>
+                </div>
+
+                <div id="mainSectionProductCartBarPayBtn">
+                    <button>結帳</button>
+                </div>
+
+            </div>
+
+        </div>
+   </div>
+
+
+</body>
+<footer>
+    <a class="logo" href="">SPICESPHERE</a>
+  
+    <small id="footCopyright">© 2024 SPICESPHERE. All rights reserved.</small>
+    <div id="foot_sub">
+      <input type="email" placeholder="E-email" />
+      <button>訂閱</button>
+    </div>
+  </footer>
+</html>
