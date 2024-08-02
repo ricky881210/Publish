@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SpiceSphere異食鍋</title>
+    <link rel="stylesheet" href="/HP.css" />
+    <link rel="icon" href="../../img/common/favicon.ico" />
+    <script src="/Backstage/jquery/jquery-3.7.1.min.js"></script>
+  </head>
+  <script>
+    $(document).ready(function () {
+      var radios = $('input[type="radio"]');
+      var recipe_pre_btn = $(".recipe_pre_btn");
+      var recipe_next_btn = $(".recipe_next_btn");
+
+      recipe_pre_btn.click(function () {
+        radios.each(function (i) {
+          if ($(this).is(":checked") && i > 0) {
+            $(this).prop("checked", false);
+            radios.eq(i - 1).prop("checked", true);
+            return false;
+          }
+        });
+      });
+
+      recipe_next_btn.click(function () {
+        radios.each(function (i) {
+          if ($(this).is(":checked") && i < radios.length - 1) {
+            $(this).prop("checked", false);
+            radios.eq(i + 1).prop("checked", true);
+            return false;
+          }
+        });
+      });
+    });
+  </script>
+
+  <body>
+    <!-- Section A -->
+    <%- include('nav_bar') %>
+
+    <div class="slide_section">
+      <div class="slide">
+        <div class="img_container">
+          <img src="../../img/home_page/1.jpg" />
+        </div>
+        <div class="slide_step">
+          <h1>新北歡樂耶誕成</h1>
+          <p>
+            我們的網站讓用戶能快速找到所需食譜，同時提供相關料理食材和廚具，讓烹飪變得輕鬆有趣。成為現代生活中每一位料理愛好者的最佳夥伴，讓他們隨時隨地享受烹飪的樂趣和美味。
+          </p>
+        </div>
+      </div>
+      <div class="slide_btn">
+        <div class="pre_btn">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="50"
+            height="50"
+            fill="currentColor"
+            class="bi bi-caret-left"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M10 12.796V3.204L4.519 8zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753"
+            />
+          </svg>
+        </div>
+        <div class="next_btn">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="50"
+            height="50"
+            fill="currentColor"
+            class="bi bi-caret-right"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M6 12.796V3.204L11.481 8zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section B -->
+    <div class="sectionB">
+      <div class="bContainer1">
+        <img class="logo" src="../../img/home_page/logo.png" />
+        <div class="logoText">品牌理念</div>
+      </div>
+      <div class="bContainer2">
+        <p>
+          我們致力於為20至40歲的都市人提供便捷的食譜平台，特別是針對住處不方便開火但渴望自製異國料理的上班族。
+          <br />
+          <br />
+          我們的網站讓用戶能快速找到所需食譜，同時提供相關料理食材和廚具，讓烹飪變得輕鬆有趣。成為現代生活中每一位料理愛好者的最佳夥伴，讓他們隨時隨地享受烹飪的樂趣和美味。
+        </p>
+      </div>
+      <div class="link_card">
+        <div>
+          <a href="default.asp"
+            ><img src="../../img/home_page/recipe.jpg" alt="recipe"">
+            <h4>食譜</h4></a
+          >
+        </div>
+        <div>
+          <a href=" default.asp"
+            ><img src="../../img/home_page/meal kit.jpg" alt="mealkit"">
+            <h4>調理包</h4></a
+          >
+        </div>
+        <div>
+          <a href=" default.asp"
+            ><img src="../../img/home_page/product.jpg" alt="product"">
+            <h4>廚具</h4></a
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- section C  -->
+    <div class="recipe_recommend_section">
+      <div class="recipe_bar">
+        <a href="">
+          <img src="../../img/home_page/foodbar.jpg" />
+          <h1>更多食譜推薦</h1></a
+        >
+      </div>
+      <div class="card_container">
+        <div class="recipe_3d">
+          <input type="radio" name="position" />
+          <input type="radio" name="position" />
+          <input type="radio" name="position" checked />
+          <input type="radio" name="position" />
+          <input type="radio" name="position" />
+          <main id="carousel">
+            <div class="item">
+              <div class="item_1">
+                <a href=""> <img src="../../img/recipe/recipe1.jpg" /></a>
+                <a href="" class="item_text">
+                  <div>好吃的飯</div>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Iusto, suscipit? Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. Iusto, suscipit? Lorem ipsum dolor sit
+                    amet consectetur adipisicing elit. Iusto, suscipit?
+                  </p>
+                </a>
+              </div>
+
+              <div class="item_2">
+                <a href=""> <img src="../../img/recipe/recipe2.jpg" /></a>
+                <a href="" class="item_text">
+                  <div>好吃的飯</div>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Iusto, suscipit? Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. Iusto, suscipit? Lorem ipsum dolor sit
+                    amet consectetur adipisicing elit. Iusto, suscipit?
+                  </p>
+                </a>
+              </div>
+            </div>
+            <div class="item">
+              <div class="item_1">
+                <a href=""> <img src="../../img/recipe/recipe3.jpg" /></a>
+                <a href="" class="item_text">
+                  <div>好吃的飯</div>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Iusto, suscipit? Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. Iusto, suscipit? Lorem ipsum dolor sit
+                    amet consectetur adipisicing elit. Iusto, suscipit?
+                  </p>
+                </a>
+              </div>
+
+              <div class="item_2">
+                <a href=""> <img src="../../img/recipe/recipe4.jpg" /></a>
+                <a href="" class="item_text">
+                  <div>好吃的飯</div>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Iusto, suscipit? Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. Iusto, suscipit? Lorem ipsum dolor sit
+                    amet consectetur adipisicing elit. Iusto, suscipit?
+                  </p>
+                </a>
+              </div>
+            </div>
+            <div class="item">
+              <div class="item_1">
+                <a href=""> <img src="../../img/recipe/recipe5.jpg" /></a>
+                <a href="" class="item_text">
+                  <div>好吃的飯</div>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Iusto, suscipit? Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. Iusto, suscipit? Lorem ipsum dolor sit
+                    amet consectetur adipisicing elit. Iusto, suscipit?
+                  </p>
+                </a>
+              </div>
+
+              <div class="item_2">
+                <a href=""> <img src="../../img/recipe/recipe6.jpg" /></a>
+                <a href="" class="item_text">
+                  <div>好吃的飯</div>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Iusto, suscipit? Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. Iusto, suscipit? Lorem ipsum dolor sit
+                    amet consectetur adipisicing elit. Iusto, suscipit?
+                  </p>
+                </a>
+              </div>
+            </div>
+            <div class="item">
+              <div class="item_1">
+                <a href=""> <img src="../../img/recipe/recipe7.jpg" /></a>
+                <a href="" class="item_text">
+                  <div>好吃的飯</div>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Iusto, suscipit? Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. Iusto, suscipit? Lorem ipsum dolor sit
+                    amet consectetur adipisicing elit. Iusto, suscipit?
+                  </p>
+                </a>
+              </div>
+
+              <div class="item_2">
+                <a href=""> <img src="../../img/recipe/recipe8.jpg" /></a>
+                <a href="" class="item_text">
+                  <div>好吃的飯</div>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Iusto, suscipit? Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. Iusto, suscipit? Lorem ipsum dolor sit
+                    amet consectetur adipisicing elit. Iusto, suscipit?
+                  </p>
+                </a>
+              </div>
+            </div>
+            <div class="item">
+              <div class="item_1">
+                <a href=""> <img src="../../img/recipe/recipe9.jpg" /></a>
+                <a href="" class="item_text">
+                  <div>好吃的飯</div>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Iusto, suscipit? Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. Iusto, suscipit? Lorem ipsum dolor sit
+                    amet consectetur adipisicing elit. Iusto, suscipit?
+                  </p>
+                </a>
+              </div>
+
+              <div class="item_2">
+                <a href=""> <img src="../../img/recipe/recipe10.jpg" /></a>
+                <a href="" class="item_text">
+                  <div>好吃的飯</div>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Iusto, suscipit? Lorem ipsum dolor sit amet consectetur
+                    adipisicing elit. Iusto, suscipit? Lorem ipsum dolor sit
+                    amet consectetur adipisicing elit. Iusto, suscipit?
+                  </p>
+                </a>
+              </div>
+            </div>
+          </main>
+        </div>
+        <div class="recipe_btn">
+          <div class="recipe_pre_btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="50"
+              height="50"
+              fill="currentColor"
+              class="bi bi-caret-left"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M10 12.796V3.204L4.519 8zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753"
+              />
+            </svg>
+          </div>
+          <div class="recipe_next_btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="50"
+              height="50"
+              fill="currentColor"
+              class="bi bi-caret-right"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M6 12.796V3.204L11.481 8zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- section D  -->
+    <div class="sectionD">
+      <div class="dContainer1">
+        <img src="../../img/home_page/ProductBar2.jpg" alt="productBar" />
+      </div>
+      <div class="proTitle">
+        <h4>你可能會需要</h4>
+      </div>
+      <div class="dContainer2">
+        <div class="product">
+          <img src="../../img/home_page/productA.jpg" />
+          <h3>鍋具組</h3>
+          <p>優質不鏽鋼和鋁合金，耐用且易於清潔</p>
+          <div class="price">＄3500</div>
+          <button>加入購物車</button>
+        </div>
+        <div class="product">
+          <img src="../../img/home_page/productA.jpg" />
+          <h3>鍋具組</h3>
+          <p>優質不鏽鋼和鋁合金，耐用且易於清潔</p>
+          <div class="price">＄3500</div>
+          <button>加入購物車</button>
+        </div>
+        <div class="product">
+          <img src="../../img/home_page/productA.jpg" />
+          <h3>鍋具組</h3>
+          <p>優質不鏽鋼和鋁合金，耐用且易於清潔</p>
+          <div class="price">＄3500</div>
+          <button>加入購物車</button>
+        </div>
+        <div class="product none">
+          <img src="../../img/home_page/productA.jpg" alt="Product 1" />
+          <h3>鍋具組</h3>
+          <p>優質不鏽鋼和鋁合金，耐用且易於清潔</p>
+          <div class="price">＄3500</div>
+          <button>加入購物車</button>
+        </div>
+      </div>
+    </div>
+
+    <%- include('footer') %>
+  </body>
+</html>

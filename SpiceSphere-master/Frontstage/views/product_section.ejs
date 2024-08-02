@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>異食鍋|商品區</title>
+    <link rel="stylesheet" href="/product_section.css" />
+    <link rel="icon" href="../../img/common/favicon.ico" />
+    <script src="/Backstage/jquery/jquery-3.7.1.min.js"></script>
+  </head>
+  <script>
+    $(document).ready(function () {
+      $(".range_container").on("input change", function () {
+        $("#now_price").text("$ " + $(this).val());
+      });
+
+      window.onload = () => {
+        function filterCards() {
+          let searchInput = $("#search_input").val().toLowerCase();
+          let maxPrice = parseInt($("#price_range").val());
+          let checkedValues = $(
+            '.checkbox_container input[type="checkbox"]:checked'
+          )
+            .map(function () {
+              return $(this).val();
+            })
+            .get();
+
+          $(".card").each(function () {
+            let card = $(this);
+            let cardName = card.find(".card_name").text().trim().toLowerCase();
+            let cardPrice = parseInt(
+              card.find(".card_price").text().replace("$", "").trim()
+            );
+            let cardClass = card.attr("value").split(",");
+
+            let matchesSearch = cardName.includes(searchInput);
+            let matchesPrice = cardPrice <= maxPrice;
+            let matchesClass =
+              checkedValues.length === 0 ||
+              cardClass.some((cls) => checkedValues.includes(cls.trim()));
+
+            if (matchesSearch && matchesPrice && matchesClass) {
+              card.show();
+            } else {
+              card.hide();
+            }
+          });
+        }
+
+        $("#search_btn").on("click", filterCards);
+        $("#price_range").on("input", filterCards);
+        $('.checkbox_container input[type="checkbox"]').on(
+          "change",
+          filterCards
+        );
+      };
+    });
+  </script>
+  <body>
+    <%- include('nav_bar') %>
+
+    <div id="slogan_section">
+      <div id="bigPictureText">
+        <p>COOKING</p>
+        <p>
+          High-quality cooking wear, such as non-stick pans and stainless steel
+          pots, enhances the culinary experience by providing durability, even
+          heat distribution, and easy cleanup.
+        </p>
+      </div>
+    </div>
+
+    <div id="main_section">
+      <div id="main_section_search">
+        <div class="search_bar">
+          <input id="search_input" type="text" placeholder="搜尋" />
+          <button id="search_btn">
+            <svg
+              width="24px"
+              height="24px"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              color="#ff0000"
+            >
+              <path
+                d="M17 17L21 21"
+                stroke="#000000"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+              <path
+                d="M3 11C3 15.4183 6.58172 19 11 19C13.213 19 15.2161 18.1015 16.6644 16.6493C18.1077 15.2022 19 13.2053 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11Z"
+                stroke="#000000"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </svg>
+          </button>
+        </div>
+
+        <div class="main_section_title price">
+          <div class="section_title">價格</div>
+          <div class="range_labels">
+            <span>$ 0</span>
+            <span id="now_price">$ 5000</span>
+            <span id="max_price">$ 10000</span>
+          </div>
+          <input
+            id="price_range"
+            class="range_container"
+            type="range"
+            min="0"
+            max="10000"
+            step="200"
+            value="5000"
+          />
+        </div>
+
+        <div class="main_section_title check">
+          <div class="section_title">用途</div>
+          <div class="checkbox_container">
+            <div>
+              <input type="checkbox" id="food" value="食材" /><label for="food"
+                >食材</label
+              >
+            </div>
+            <div>
+              <input type="checkbox" id="seasoning" value="調味料" /><label
+                for="seasoning"
+                >調味料</label
+              >
+            </div>
+            <div>
+              <input type="checkbox" id="package" value="調理包" /><label
+                for="package"
+                >調理包</label
+              >
+            </div>
+            <div>
+              <input type="checkbox" id="spoon" value="調羹" /><label
+                for="spoon"
+                >調羹</label
+              >
+            </div>
+            <div>
+              <input type="checkbox" id="cookware" value="鍋具" /><label
+                for="cookware"
+                >鍋具</label
+              >
+            </div>
+            <div>
+              <input type="checkbox" id="cleaning" value="清潔用品" /><label
+                for="cleaning"
+                >清潔用品</label
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="main_section_title">
+          <div class="section_title">評分</div>
+          <div id="star_container">
+            <div class="star">
+              <input type="radio" name="star" id="score5" value="5" />
+              <label class="star" for="score5"></label>
+
+              <input type="radio" name="star" id="score4" value="4" />
+              <label class="star" for="score4"></label>
+
+              <input type="radio" name="star" id="score3" value="3" />
+              <label class="star" for="score3"></label>
+
+              <input type="radio" name="star" id="score2" value="2" />
+              <label class="star" for="score2"></label>
+
+              <input type="radio" name="star" id="score1" value="1" />
+              <label class="star" for="score1"></label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="main_section_product_cards">
+        <% items.forEach(function(product) { %>
+        <div class="card" value="<%= product.related_name %>">
+          <a
+            target="_blank"
+            href="/product_section/product_page/<%= product.product_uid %>"
+          >
+            <div class="card_img">
+              <img
+                src="../../img/product/product<%= product.product_uid %>.jpg"
+              />
+              <div class="card_description"><%= product.full_describe %></div>
+            </div>
+            <div class="card_name"><%= product.product_title %></div>
+            <div class="card_price">$ <%= product.price %></div>
+          </a>
+          <div class="card_btn">
+            <button>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="30"
+                height="30"
+                fill="currentColor"
+                class="bi bi-cart4"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l.5 2H5V5zM6 5v2h2V5zm3 0v2h2V5zm3 0v2h1.36l.5-2zm1.11 3H12v2h.61zM11 8H9v2h2zM8 8H6v2h2zM5 8H3.89l.5 2H5zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <% }); %>
+      </div>
+    </div>
+
+    <div id="page">
+      <span><</span>
+      <sapn class="page_num">
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+      </sapn>
+
+      <span>></span>
+    </div>
+
+    <%- include('footer') %>
+  </body>
+</html>

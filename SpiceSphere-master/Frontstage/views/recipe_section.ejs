@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>異食鍋|食譜區</title>
+    <link rel="icon" href="../../img/common/favicon.ico" />
+    <link rel="stylesheet" href="/recipe_section.css" />
+  </head>
+  <body>
+    <%- include('nav_bar') %>
+
+    <div id="head_section">
+      <img src="../../img/recipe_section/Muffin_Egg_Meal.jpeg" />
+      <div class="search_recipe">
+        <div class="search_recipe_text">
+          <h1>探索新食譜</h1>
+          <span>想找的食譜，應該都找得到</span>
+        </div>
+        <div class="search_recipe_search">
+          <input
+            type="text"
+            class="search_recipe_input"
+            placeholder="我想吃..."
+          /><br /><br />
+          <input
+            type="text"
+            class="search_recipe_input"
+            placeholder="我不想吃..."
+          />
+        </div>
+        <button>搜索</button>
+      </div>
+    </div>
+
+    <div id="multiplex_filter">
+      <div class="filter">
+        <div class="filter_title">
+          <span>烹飪空間</span>
+        </div>
+        <div class="filter_btn">
+          <input type="checkbox" id="suite" /><label class="btn" for="suite"
+            >套房</label
+          >
+          <input type="checkbox" id="kitchen" /><label class="btn" for="kitchen"
+            >廚房</label
+          >
+        </div>
+      </div>
+      <div class="filter">
+        <div class="filter_title">
+          <span>烹飪時段</span>
+        </div>
+        <div class="filter_btn">
+          <input type="checkbox" id="breakfast" /><label
+            class="btn"
+            for="breakfast"
+            >早餐</label
+          >
+          <input type="checkbox" id="lunch" /><label class="btn" for="lunch"
+            >中餐</label
+          >
+          <input type="checkbox" id="dinner" /><label class="btn" for="dinner"
+            >晚餐</label
+          >
+        </div>
+      </div>
+      <div class="filter">
+        <div class="filter_title">
+          <span>料理風格</span>
+        </div>
+        <div class="filter_btn">
+          <input type="checkbox" id="italian" /><label class="btn" for="italian"
+            >義式</label
+          >
+          <input type="checkbox" id="french" /><label class="btn" for="french"
+            >法式</label
+          >
+          <input type="checkbox" id="korean" /><label class="btn" for="korean"
+            >韓式</label
+          >
+          <input type="checkbox" id="thai" /><label class="btn" for="thai"
+            >泰式</label
+          >
+          <input type="checkbox" id="japanese" /><label
+            class="btn"
+            for="japanese"
+            >日式</label
+          >
+        </div>
+      </div>
+      <div class="filter">
+        <div class="filter_title">
+          <span>特殊需求</span>
+        </div>
+        <div class="filter_btn">
+          <input type="checkbox" id="vege" /><label class="btn" for="vege"
+            >素食</label
+          >
+        </div>
+      </div>
+    </div>
+
+    <div id="recipe_pic_section">
+      <div class="recipe_card">
+        <a href=""
+          ><img src="../../img/recipe_section/Honey_on_the_pancakes.jpg"
+        /></a>
+        <div class="recipe_when">時段</div>
+        <div class="recipe_title">看起來有點乾的鬆餅</div>
+        <a href="" class="recipe_describe">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
+          itaque libero aut reiciendis distinctio, culpa, velit id eaque, est
+          hic maiores quibusdam exercitationem sit tempore fugiat praesentium
+          impedit atque obcaecati?
+        </a>
+      </div>
+      <div class="recipe_card">
+        <a><img src="../../img/recipe_section/yellow_curry.jpg" /></a>
+        <div class="recipe_when">時段</div>
+        <div class="recipe_title">看起來很不錯的應該是魚排吧</div>
+        <a href="" class="recipe_describe">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
+          itaque libero aut reiciendis distinctio, culpa, velit id eaque, est
+          hic maiores quibusdam exercitationem sit tempore fugiat praesentium
+          impedit atque obcaecati?
+        </a>
+      </div>
+      <div class="recipe_card">
+        <a><img src="../../img/recipe_section/pizza.jpg" /></a>
+        <div class="recipe_when">時段</div>
+        <div class="recipe_title">感覺很油膩的蛋料理</div>
+        <a href="" class="recipe_describe">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
+          itaque libero aut reiciendis distinctio, culpa, velit id eaque, est
+          hic maiores quibusdam exercitationem sit tempore fugiat praesentium
+          impedit atque obcaecati?
+        </a>
+      </div>
+      <div class="recipe_card">
+        <a href=""
+          ><img src="../../img/recipe_section/Honey_on_the_pancakes.jpg"
+        /></a>
+        <div class="recipe_when">時段</div>
+        <div class="recipe_title">看起來有點乾的鬆餅</div>
+        <a href="" class="recipe_describe">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
+          itaque libero aut reiciendis distinctio, culpa, velit id eaque, est
+          hic maiores quibusdam exercitationem sit tempore fugiat praesentium
+          impedit atque obcaecati?
+        </a>
+      </div>
+      <div class="recipe_card">
+        <a><img src="../../img/recipe_section/yellow_curry.jpg" /></a>
+        <div class="recipe_when">時段</div>
+        <div class="recipe_title">看起來很不錯的應該是魚排吧</div>
+        <a href="" class="recipe_describe">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
+          itaque libero aut reiciendis distinctio, culpa, velit id eaque, est
+          hic maiores quibusdam exercitationem sit tempore fugiat praesentium
+          impedit atque obcaecati?
+        </a>
+      </div>
+      <div class="recipe_card">
+        <a><img src="../../img/recipe_section/pizza.jpg" /></a>
+        <div class="recipe_when">時段</div>
+        <div class="recipe_title">感覺很油膩的蛋料理</div>
+        <a href="" class="recipe_describe">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
+          itaque libero aut reiciendis distinctio, culpa, velit id eaque, est
+          hic maiores quibusdam exercitationem sit tempore fugiat praesentium
+          impedit atque obcaecati?
+        </a>
+      </div>
+    </div>
+
+    <%- include('footer') %>
+  </body>
+</html>
+
+<!-- <img src="../../img/recipe_section/yellow_curry.jpg" />
+      <img src="../../img/recipe_section/pizza.jpg" />
+
+      <img src="../../img/recipe_section/Japanese_dish_box.png" />
+      <img src="../../img/recipe_section/Four_lunch_boxes.jpg" />
+      <img src="../../img/recipe_section/Honey_on_the_pancakes.jpg" />
+      <img src="../../img/recipe_section/Grill_tomato_paste.jpg" />
+      <img src="../../img/recipe_section/Fish_with_Tomatoes.jpg" />
+      <img src="../../img/recipe_section/Southern_Curry_with_Grill.jpg" /> -->

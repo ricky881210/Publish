@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>異鍋豐|付款頁面</title>
+    <link rel="stylesheet" href="/payment.css" />
+    <link rel="icon" href="../../img/common/favicon.ico" />
+    <script src="/Backstage/jquery/jquery-3.7.1.min.js"></script>
+</head>
+<script>
+    $(document).ready(function() {
+  // 監聽 .add 按鈕的點擊事件
+  $('.card').on('click', '.add', function() {
+    var quantityElement = $(this).siblings('.product_quanity');
+    var quantity = parseInt(quantityElement.text(), 10);
+    quantityElement.text(quantity + 1);
+  });
+
+  // 監聽 .munis 按鈕的點擊事件
+  $('.card').on('click', '.munis', function() {
+    var quantityElement = $(this).siblings('.product_quanity');
+    var quantity = parseInt(quantityElement.text(), 10);
+    if (quantity > 0) {
+      quantityElement.text(quantity - 1);
+    }
+  });
+});
+</script>
+<body>
+    <%- include('nav_bar') %>
+
+    <div id="container">
+
+        <div class="user_info">
+            <div class="title">收件地址</div>
+            <div class="address">
+                <div class="row">
+                  <div class="group">
+                    <label for="who">收件人</label>
+                    <input id="who">
+                  </div>
+                  <div class="group"> 
+                    <label for="phone">電話</label>
+                    <input id="phone">
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="group">
+                      <label for="mail">電子信箱</label>
+                      <input id="mail">
+                    </div>
+                    <div class="group"> 
+                      <label for="where">郵遞區號</label>
+                      <input id="where">
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="group">
+                      <label for="city">市</label>
+                      <input id="city">
+                    </div>
+                    <div class="row"> 
+                        <div class="row_row">
+                        <div class="group">
+                        <label for="district">區</label>
+                        <input id="district">
+                        </div>
+                        <div class="group">
+                      <label for="road">街</label>
+                      <input id="road">
+                    </div>
+                      <div class="group">
+                      <label for="number">號</label>
+                      <input id="number">
+                    </div>
+                    </div>
+                    </div>
+                  </div>
+              </div>
+
+              <div class="title">付款方式</div>
+            <div class="payment">
+                <div class="payment_chose">
+                    <div><input type="radio" name="payment" id="cash"> <label for="cash">貨到付款</label></div>
+                    <div><input type="radio" name="payment" id="credit"> <label for="credit">信用卡</label></div>
+                    <div><input type="radio" name="payment" id="credit2"> <label for="credit2">信用卡分期</label></div>
+                    <div><input type="radio" name="payment" id="jk"> <label for="jk">街口支付</label></div>
+                </div>
+            </div>
+        </div>
+        <div class="cart_section">
+            <div class="title">購物車</div>
+            <div class="cart">
+                <div class="cart_item">
+                    <div class="card">
+                        <div class="order">1</div>
+                        <a href=""> <img src="../../img/product/product15.jpg"></a>
+                        <div class="card_info">
+                                <a href=""><div>好吃好吃好吃</div></a>
+                                <div class="price">$ 9999</div>
+                        </div>
+                        <div class="card_btn">
+                            <div class="btn_btn">
+                              <button class="munis">-</button
+                              ><span class="product_quanity">0</span
+                              ><button class="add">+</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card">
+                        <div class="order">1</div>
+                        <a href=""> <img src="../../img/product/product15.jpg"></a>
+                        <div class="card_info">
+                                <a href=""><div>好吃好吃好吃</div></a>
+                                <div class="price">$ 9999</div>
+                        </div>
+                        <div class="card_btn">
+                            <div class="btn_btn">
+                              <button class="munis">-</button
+                              ><span class="product_quanity">0</span
+                              ><button class="add">+</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card">
+                        <div class="order">12</div>
+                        <a href=""> <img src="../../img/product/product15.jpg"></a>
+                        <div class="card_info">
+                                <a href=""><div>好吃好吃好吃</div></a>
+                                <div class="price">$ 9999</div>
+                        </div>
+                        <div class="card_btn">
+                            <div class="btn_btn">
+                              <button class="munis">-</button
+                              ><span class="product_quanity">0</span
+                              ><button class="add">+</button>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+
+                <div class="money">
+                    <div><span>商品總金額</span> <span>$ 123</span></div>
+                    <div><span>運費總金額</span> <span>$ 123</span></div>
+                    <div class="total"><span>付款金額</span> <span>$ 123</span></div>
+                  </div>
+
+                <button id="pay">結帳</button>
+            </div>
+        </div>
+    </div>
+
+
+    <%- include('footer') %>
+    
+</body>
+</html>

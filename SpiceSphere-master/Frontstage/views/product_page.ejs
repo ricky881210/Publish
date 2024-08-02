@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>異食鍋| <%= items.product_title %></title>
+    <link rel="stylesheet" href="/product_page.css" />
+    <link rel="icon" href="../../img/common/favicon.ico" />
+    <script src="/Backstage/jquery/jquery-3.7.1.min.js"></script>
+  </head>
+  <script>
+    $(document).ready(function () {
+      $(".add").click(function () {
+        var quantity = parseInt($(".product_quanity").text());
+        $(".product_quanity").text(quantity + 1);
+      });
+
+      $(".munis").click(function () {
+        var quantity = parseInt($(".product_quanity").text());
+        if (quantity > 0) {
+          $(".product_quanity").text(quantity - 1);
+        }
+      });
+
+      var commentInfos = $(".comment_carousel .comment_info");
+      var currentIndex = 0;
+      commentInfos.hide().eq(currentIndex).show();
+
+      $(".carousel_next").click(function () {
+        commentInfos.eq(currentIndex).hide();
+        currentIndex = (currentIndex + 1) % commentInfos.length;
+        commentInfos.eq(currentIndex).show();
+      });
+
+      $(".carousel_pre").click(function () {
+        commentInfos.eq(currentIndex).hide();
+        currentIndex =
+          (currentIndex - 1 + commentInfos.length) % commentInfos.length;
+        commentInfos.eq(currentIndex).show();
+      });
+    });
+  </script>
+  <body>
+    <%- include('nav_bar') %>
+    <div id="product">
+      <div class="product_img">
+        <img src="../../img/product/product<%= items.product_uid %>.jpg" />
+      </div>
+      <div class="product_info">
+        <div class="product_title"><%= items.product_title %></div>
+        <div id="star_container">
+          <div class="star">
+            <input type="radio" name="star" id="score5" value="5"<%= items.product_rating == 5 ? 'checked' : '' %> />
+            <label class="star" for="score5"></label>
+
+            <input type="radio" name="star" id="score4" value="4" <%= items.product_rating == 4 ? 'checked' : '' %>/>
+            <label class="star" for="score4"></label>
+
+            <input type="radio" name="star" id="score3" value="3" <%= items.product_rating == 3 ? 'checked' : '' %>/>
+            <label class="star" for="score3"></label>
+
+            <input type="radio" name="star" id="score2" value="2" <%= items.product_rating == 2 ? 'checked' : '' %>/>
+            <label class="star" for="score2"></label>
+
+            <input type="radio" name="star" id="score1" value="1" <%= items.product_rating == 1 ? 'checked' : '' %>/>
+            <label class="star" for="score1"></label>
+          </div>
+          <span>(5678)</span>
+        </div>
+        <div class="product_price">$ <%= items.price %></div>
+        <div class="product_tag">
+          <span>
+            <% if (items.related == 1) { %>
+              食材
+            <% } else if (items.related == 2) { %>
+              調味料
+            <% } else if (items.related == 3) { %>
+              調理包
+            <% } else if (items.related == 4) { %>
+              碗具
+            <% } else if (items.related == 5) { %>
+              鍋具
+            <% } %>
+          </span>
+          <span>
+            <% if (items.sales_amount >= 1000 ) { %>
+            熱銷
+            <% } else if (items.sales_amount >= 2500) { %>
+            大熱銷
+            <% } else if (items.sales_amount >= 5000) { %>
+            絕讚熱銷
+            <% } else { %>
+            熱議
+            <% } %>
+          </span>
+          <span>
+            <% if (items.product_rating == 3) { %>
+              好評
+            <% } else if (items.product_rating == 4) { %>
+              極度好評
+            <% } else if (items.product_rating == 5) { %>
+              壓倒性好評
+            <% } else { %>
+              品質優良
+            <% } %>
+          </span>
+        </div>
+        <div class="product_size">
+          <div class="title">尺寸規格</div>
+          <div class="size_info">
+            <% 
+            var sizes = items.size.split("@");
+            sizes.forEach(function(size) { 
+            %>
+              <div><%= size %></div>
+            <% 
+            }); 
+            %>
+          </div>
+        </div>
+        <div class="product_describe">
+          <p>
+            <%= items.full_describe%>
+        </div>
+        <div class="btn">
+          <div class="btn_border">
+            <div class="btn_btn">
+              <button class="munis">-</button
+              ><span class="product_quanity">0</span
+              ><button class="add">+</button>
+            </div>
+            <button class="btn_text">放入購物車</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="recommend_section">
+      <div class="title">您可能會喜歡</div>
+      <div class="recipe_cards">
+        <% recommendations.forEach(function(product) { %>
+        <div class="card">
+          <a href="/product_section/product_page/<%= product.product_uid %>"><img src="../../img/product/product<%= product.product_uid %>.jpg" /></a>
+          <a class="card_text" href="/product_section/product_page/<%= product.product_uid %>"><%= product.product_title %></a>
+          <div class="rating">
+            <% for(let i = 1; i <= 5; i++) { %>
+              <% if(i <= product.product_rating) { %>
+                <span>★</span>
+              <% } else { %>
+                <span>☆</span>
+              <% } %>
+            <% } %>
+          </div>
+        </div>
+        <% }); %>
+      </div>
+    </div>
+
+    <div id="user_comment">
+      <div class="title">使用心得</div>
+      <div class="comment_carousel">
+        <div class="comment_info">
+          <div class="user_name">觀雲客</div>
+          <div class="user_rating">★★★★★</div>
+          <div class="comment_text">
+            廣播創造成了，核心公司決策讓人時尚去了公司下去，不好意思山西把你說了聰明完全旅遊，庫存強化話題，開放前後再次印度穿著像是特殊，最佳奧客檢測發貼角度軍事一台，受傷走勢想像我國地圖文檔大盤經常好像，鏡頭採用生氣異常範圍內諮詢草魚本週這些，提到更新時間看見技巧重點原理供應商更多日本理念她是頭髮，上述伺服器直到溫州吃了秘密利用將會制度進口作品很久，當初每次一片產品，圖形也能高效大量請您僅供螢幕，出口夫妻。
+          </div>
+        </div>
+        <div class="comment_info">
+          <div class="user_name">聽海生</div>
+          <div class="user_rating">★★★★★</div>
+          <div class="comment_text">
+            廣播創造成了，核心公司決策讓人時尚去了公司下去，不好意思山西把你說了聰明完全旅遊，庫存強化話題，開放前後再次印度穿著像是特殊，最佳奧客檢測發貼角度軍事一台，受傷走勢想像我國地圖文檔大盤經常好像，鏡頭採用生氣異常範圍內諮詢草魚本週這些，提到更新時間看見技巧重點原理供應商更多日本理念她是頭髮，上述伺服器直到溫州吃了秘密利用將會制度進口作品很久，當初每次一片產品，圖形也能高效大量請您僅供螢幕，出口夫妻。
+          </div>
+        </div>
+        <div class="comment_info">
+          <div class="user_name">州長門</div>
+          <div class="user_rating">★★★★★</div>
+          <div class="comment_text">
+            廣播創造成了，核心公司決策讓人時尚去了公司下去，不好意思山西把你說了聰明完全旅遊，庫存強化話題，開放前後再次印度穿著像是特殊，最佳奧客檢測發貼角度軍事一台，受傷走勢想像我國地圖文檔大盤經常好像，鏡頭採用生氣異常範圍內諮詢草魚本週這些，提到更新時間看見技巧重點原理供應商更多日本理念她是頭髮，上述伺服器直到溫州吃了秘密利用將會制度進口作品很久，當初每次一片產品，圖形也能高效大量請您僅供螢幕，出口夫妻。
+          </div>
+        </div>
+        <div class="comment_info">
+          <div class="user_name">身屠龍</div>
+          <div class="user_rating">★★★★★</div>
+          <div class="comment_text">
+            廣播創造成了，核心公司決策讓人時尚去了公司下去，不好意思山西把你說了聰明完全旅遊，庫存強化話題，開放前後再次印度穿著像是特殊，最佳奧客檢測發貼角度軍事一台，受傷走勢想像我國地圖文檔大盤經常好像，鏡頭採用生氣異常範圍內諮詢草魚本週這些，提到更新時間看見技巧重點原理供應商更多日本理念她是頭髮，上述伺服器直到溫州吃了秘密利用將會制度進口作品很久，當初每次一片產品，圖形也能高效大量請您僅供螢幕，出口夫妻。
+          </div>
+        </div>
+      </div>
+      <div class="carousel_btn">
+        <div class="carousel_pre">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="50"
+            height="50"
+            fill="currentColor"
+            class="bi bi-caret-left"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M10 12.796V3.204L4.519 8zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753"
+            />
+          </svg>
+        </div>
+        <div class="carousel_next">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="50"
+            height="50"
+            fill="currentColor"
+            class="bi bi-caret-right"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M6 12.796V3.204L11.481 8zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <%- include('footer') %>
+  </body>
+</html>
