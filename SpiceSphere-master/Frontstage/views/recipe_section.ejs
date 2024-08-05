@@ -1,14 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>異食鍋|食譜區</title>
-    <link rel="icon" href="../../img/common/favicon.ico" />
-    <link rel="stylesheet" href="/recipe_section.css" />
-  </head>
-  <body>
-    <%- include('nav_bar') %>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>異食鍋|食譜區</title>
+  <link rel="icon" href="../../img/common/favicon.ico" />
+  <link rel="stylesheet" href="/recipe_section.css" />
+  <script src="/Backstage/jquery/jquery-3.7.1.min.js"></script>
+
+</head>
+<script>
+  $(document).ready(function () {
+    function filterRecipes() {
+      // 選擇被勾選的標籤
+      function checkedValues(className) {
+        return $(`.${className}:checked`).map(function () {
+          return $(this).next('label').text().trim();
+        })
+          .get();
+      }
+      let isKitchen = checkedValues('isKitchen')
+      let when = checkedValues('when')
+      let style = checkedValues('style')
+      let vege = checkedValues('vege')
+      let hasResult = true;
+      // /選擇被勾選的標籤
+
+      $('.recipe_card').each(function () {
+        let wantInput = $('#want').val().trim().toLowerCase();
+        let notWantInput = $('#notWant').val().trim().toLowerCase();
+        let cardName = $(this).find('.recipe_title').text().trim().toLowerCase();
+        let cardIngredients = $(this).attr('data-ingredients').split(',')
+        console.log(cardIngredients);
+        
+        let matchesSearch = (wantInput === '' || cardName.includes(wantInput) || cardIngredients.includes(wantInput)) &&
+        (notWantInput === '' || (!cardName.includes(notWantInput) && !containsUnwantedIngredient(cardIngredients, notWantInput)));
+
+        function containsUnwantedIngredient(ingredients, unwanted) {
+          // 檢查每個食材
+          for (let ingredient of ingredients) {
+            ingredient = ingredient.trim();
+            // 如果食材不是以 "@" 開頭，且包含不想要的內容，返回 true
+            if (!ingredient.startsWith('@') && ingredient.includes(unwanted)) {
+              return true;
+            }
+          }
+          // 如果沒有找到符合條件的不想要的食材，返回 false
+          return false;
+        }
+
+        // 轉換資料表示型式
+        let cardClass = [
+          $(this).attr('data-isKitchen') == 1 ? '廚房' : '套房',
+          $(this).attr('data-when'),
+          $(this).attr('data-style'),
+          $(this).attr('data-vege') == 1 ? '素食' : ''
+        ]
+        // /轉換資料表示型式
+
+        // 標籤篩選
+        function arraysOverlap(arr1, arr2) {
+          return arr2.length === 0 || arr2.some(element => arr1.includes(element));
+        }
+
+        let matchesFilters =
+          arraysOverlap(cardClass, isKitchen) &&
+          arraysOverlap(cardClass, when) &&
+          arraysOverlap(cardClass, style) &&
+          arraysOverlap(cardClass, vege);
+        // /標籤篩選
+
+        if (matchesSearch && matchesFilters) {
+          $(this).css('display', 'block');
+        } else {
+          $(this).css('display', 'none');
+        }
+      })
+    }
+
+    $('#search_btn').on('click', filterRecipes)
+    $('.filter_btn input[type="checkbox"]').on('change', filterRecipes)
+  })
+</script>
+
+<body>
+  <%- include('nav_bar') %>
 
     <div id="head_section">
       <img src="../../img/recipe_section/Muffin_Egg_Meal.jpeg" />
@@ -18,18 +95,10 @@
           <span>想找的食譜，應該都找得到</span>
         </div>
         <div class="search_recipe_search">
-          <input
-            type="text"
-            class="search_recipe_input"
-            placeholder="我想吃..."
-          /><br /><br />
-          <input
-            type="text"
-            class="search_recipe_input"
-            placeholder="我不想吃..."
-          />
+          <input id="want" type="text" class="search_recipe_input" placeholder="我想吃..." /><br /><br />
+          <input id="notWant" type="text" class="search_recipe_input" placeholder="我不想吃..." />
         </div>
-        <button>搜索</button>
+        <button id="search_btn">搜索</button>
       </div>
     </div>
 
@@ -39,12 +108,8 @@
           <span>烹飪空間</span>
         </div>
         <div class="filter_btn">
-          <input type="checkbox" id="suite" /><label class="btn" for="suite"
-            >套房</label
-          >
-          <input type="checkbox" id="kitchen" /><label class="btn" for="kitchen"
-            >廚房</label
-          >
+          <input class="isKitchen" type="checkbox" id="suite" /><label class="btn" for="suite">套房</label>
+          <input class="isKitchen" type="checkbox" id="kitchen" /><label class="btn" for="kitchen">廚房</label>
         </div>
       </div>
       <div class="filter">
@@ -52,17 +117,9 @@
           <span>烹飪時段</span>
         </div>
         <div class="filter_btn">
-          <input type="checkbox" id="breakfast" /><label
-            class="btn"
-            for="breakfast"
-            >早餐</label
-          >
-          <input type="checkbox" id="lunch" /><label class="btn" for="lunch"
-            >中餐</label
-          >
-          <input type="checkbox" id="dinner" /><label class="btn" for="dinner"
-            >晚餐</label
-          >
+          <input class="when" type="checkbox" id="breakfast" /><label class="btn" for="breakfast">早餐</label>
+          <input class="when" type="checkbox" id="lunch" /><label class="btn" for="lunch">中餐</label>
+          <input class="when" type="checkbox" id="dinner" /><label class="btn" for="dinner">晚餐</label>
         </div>
       </div>
       <div class="filter">
@@ -70,23 +127,11 @@
           <span>料理風格</span>
         </div>
         <div class="filter_btn">
-          <input type="checkbox" id="italian" /><label class="btn" for="italian"
-            >義式</label
-          >
-          <input type="checkbox" id="french" /><label class="btn" for="french"
-            >法式</label
-          >
-          <input type="checkbox" id="korean" /><label class="btn" for="korean"
-            >韓式</label
-          >
-          <input type="checkbox" id="thai" /><label class="btn" for="thai"
-            >泰式</label
-          >
-          <input type="checkbox" id="japanese" /><label
-            class="btn"
-            for="japanese"
-            >日式</label
-          >
+          <input class="style" type="checkbox" id="italian" /><label class="btn" for="italian">義式</label>
+          <input class="style" type="checkbox" id="french" /><label class="btn" for="french">法式</label>
+          <input class="style" type="checkbox" id="korean" /><label class="btn" for="korean">韓式</label>
+          <input class="style" type="checkbox" id="thai" /><label class="btn" for="thai">泰式</label>
+          <input class="style" type="checkbox" id="japanese" /><label class="btn" for="japanese">日式</label>
         </div>
       </div>
       <div class="filter">
@@ -94,88 +139,34 @@
           <span>特殊需求</span>
         </div>
         <div class="filter_btn">
-          <input type="checkbox" id="vege" /><label class="btn" for="vege"
-            >素食</label
-          >
+          <input class="vege" type="checkbox" id="vege" /><label class="btn" for="vege">素食</label>
         </div>
       </div>
     </div>
 
     <div id="recipe_pic_section">
-      <div class="recipe_card">
-        <a href=""
-          ><img src="../../img/recipe_section/Honey_on_the_pancakes.jpg"
-        /></a>
-        <div class="recipe_when">時段</div>
-        <div class="recipe_title">看起來有點乾的鬆餅</div>
-        <a href="" class="recipe_describe">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
-          itaque libero aut reiciendis distinctio, culpa, velit id eaque, est
-          hic maiores quibusdam exercitationem sit tempore fugiat praesentium
-          impedit atque obcaecati?
-        </a>
-      </div>
-      <div class="recipe_card">
-        <a><img src="../../img/recipe_section/yellow_curry.jpg" /></a>
-        <div class="recipe_when">時段</div>
-        <div class="recipe_title">看起來很不錯的應該是魚排吧</div>
-        <a href="" class="recipe_describe">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
-          itaque libero aut reiciendis distinctio, culpa, velit id eaque, est
-          hic maiores quibusdam exercitationem sit tempore fugiat praesentium
-          impedit atque obcaecati?
-        </a>
-      </div>
-      <div class="recipe_card">
-        <a><img src="../../img/recipe_section/pizza.jpg" /></a>
-        <div class="recipe_when">時段</div>
-        <div class="recipe_title">感覺很油膩的蛋料理</div>
-        <a href="" class="recipe_describe">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
-          itaque libero aut reiciendis distinctio, culpa, velit id eaque, est
-          hic maiores quibusdam exercitationem sit tempore fugiat praesentium
-          impedit atque obcaecati?
-        </a>
-      </div>
-      <div class="recipe_card">
-        <a href=""
-          ><img src="../../img/recipe_section/Honey_on_the_pancakes.jpg"
-        /></a>
-        <div class="recipe_when">時段</div>
-        <div class="recipe_title">看起來有點乾的鬆餅</div>
-        <a href="" class="recipe_describe">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
-          itaque libero aut reiciendis distinctio, culpa, velit id eaque, est
-          hic maiores quibusdam exercitationem sit tempore fugiat praesentium
-          impedit atque obcaecati?
-        </a>
-      </div>
-      <div class="recipe_card">
-        <a><img src="../../img/recipe_section/yellow_curry.jpg" /></a>
-        <div class="recipe_when">時段</div>
-        <div class="recipe_title">看起來很不錯的應該是魚排吧</div>
-        <a href="" class="recipe_describe">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
-          itaque libero aut reiciendis distinctio, culpa, velit id eaque, est
-          hic maiores quibusdam exercitationem sit tempore fugiat praesentium
-          impedit atque obcaecati?
-        </a>
-      </div>
-      <div class="recipe_card">
-        <a><img src="../../img/recipe_section/pizza.jpg" /></a>
-        <div class="recipe_when">時段</div>
-        <div class="recipe_title">感覺很油膩的蛋料理</div>
-        <a href="" class="recipe_describe">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
-          itaque libero aut reiciendis distinctio, culpa, velit id eaque, est
-          hic maiores quibusdam exercitationem sit tempore fugiat praesentium
-          impedit atque obcaecati?
-        </a>
-      </div>
+      <% items.forEach(function(recipe) { %>
+        <div class="recipe_card" data-ingredients="<%= recipe.ingredients %>" data-isKitchen="<%= recipe.isKitchen %>"
+          data-when="<%= recipe.time_name %>" data-style="<%= recipe.style_name %>" data-vege="<%= recipe.is_vege %>">
+          <a target="_blank" href="/recipe_section/recipe_page/<%= recipe.recipe_uid %>">
+            <img src="../../img/recipe/recipe<%= recipe.recipe_uid %>.jpg" />
+          </a>
+          <div class="recipe_when">
+            <%= recipe.time_name %>
+          </div>
+          <div class="recipe_title">
+            <%= recipe.recipe_title %>
+          </div>
+          <a href="" class="recipe_describe">
+            <%= recipe.full_describe %>
+          </a>
+        </div>
+        <% }); %>
     </div>
 
     <%- include('footer') %>
-  </body>
+</body>
+
 </html>
 
 <!-- <img src="../../img/recipe_section/yellow_curry.jpg" />

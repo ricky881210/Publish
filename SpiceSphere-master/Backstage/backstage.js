@@ -50,6 +50,26 @@ db.connect((err) => {
 
 ////////////////////////////////////////////給前端渲染資料 食譜單頁
 
+app.get("/api/recipes", (req, res) => {
+  let sql =
+    "SELECT " +
+    "recipe.*, " +
+    "style.style_name AS style_name, " +
+    "related.related_name AS related_name, " +
+    "`when`.time_name AS time_name, " +
+    "GROUP_CONCAT(DISTINCT ingredients_for_recipe.ingredient_name) AS ingredients " +
+    "FROM recipe " +
+    "LEFT JOIN style ON recipe.style = style.style_uid " +
+    "LEFT JOIN related ON recipe.related = related.related_uid " +
+    "LEFT JOIN `when` ON recipe.when = `when`.time_uid " +
+    "LEFT JOIN ingredients_for_recipe ON recipe.recipe_uid = ingredients_for_recipe.recipe_uid " +
+    "GROUP BY recipe.recipe_uid";
+  db.query(sql, (err, result) => {
+    if (err) throw err;
+    res.json({ items: result });
+  });
+});
+
 app.get("/api/recipe/:id", (req, res) => {
   let sql =
     "SELECT recipe.*, style.style_name AS style_name, related.related_name AS related_name, ingredients_for_recipe.* FROM recipe LEFT JOIN style ON recipe.style = style.style_uid LEFT JOIN related ON recipe.related = related.related_uid LEFT JOIN ingredients_for_recipe ON recipe.recipe_uid = ingredients_for_recipe.recipe_uid WHERE recipe.recipe_uid = ?";

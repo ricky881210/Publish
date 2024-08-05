@@ -17,7 +17,20 @@ app.get("/home_page", (req, res) => {
 
 ///////////////食譜區
 app.get("/recipe_section", (req, res) => {
-  res.render("recipe_section");
+  fetch("http://localhost:3000/api/recipes")
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok ' + response.statusText);
+    }
+    return response.json();
+  })
+  .then((data) => {
+    res.render("recipe_section", data);
+  })
+  .catch((error) => {
+    console.error('There was a problem with the fetch operation:', error);
+    res.status(500).send('Internal Server Error');
+  });
 });
 
 ///////////////食譜單頁
