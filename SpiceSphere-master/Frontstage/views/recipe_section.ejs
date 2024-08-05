@@ -28,27 +28,26 @@
       // /選擇被勾選的標籤
 
       $('.recipe_card').each(function () {
+        // 搜尋功能
         let wantInput = $('#want').val().trim().toLowerCase();
         let notWantInput = $('#notWant').val().trim().toLowerCase();
         let cardName = $(this).find('.recipe_title').text().trim().toLowerCase();
         let cardIngredients = $(this).attr('data-ingredients').split(',')
         console.log(cardIngredients);
-        
-        let matchesSearch = (wantInput === '' || cardName.includes(wantInput) || cardIngredients.includes(wantInput)) &&
-        (notWantInput === '' || (!cardName.includes(notWantInput) && !containsUnwantedIngredient(cardIngredients, notWantInput)));
 
         function containsUnwantedIngredient(ingredients, unwanted) {
-          // 檢查每個食材
           for (let ingredient of ingredients) {
             ingredient = ingredient.trim();
-            // 如果食材不是以 "@" 開頭，且包含不想要的內容，返回 true
             if (!ingredient.startsWith('@') && ingredient.includes(unwanted)) {
               return true;
             }
           }
-          // 如果沒有找到符合條件的不想要的食材，返回 false
           return false;
         }
+        
+        let matchesSearch = (wantInput === '' || cardName.includes(wantInput) || cardIngredients.includes(wantInput)) &&
+        (notWantInput === '' || (!cardName.includes(notWantInput) && !containsUnwantedIngredient(cardIngredients, notWantInput)));
+        // /搜尋功能
 
         // 轉換資料表示型式
         let cardClass = [
