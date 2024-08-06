@@ -26,6 +26,10 @@
       let vege = checkedValues('vege')
       let hasResult = true;
       // /選擇被勾選的標籤
+      console.log(isKitchen);
+      
+      // 於篩選結果排序使用
+      let visibleCount = 0;
 
       $('.recipe_card').each(function () {
         // 搜尋功能
@@ -33,9 +37,10 @@
         let notWantInput = $('#notWant').val().trim().toLowerCase();
         let cardName = $(this).find('.recipe_title').text().trim().toLowerCase();
         let cardIngredients = $(this).attr('data-ingredients').split(',')
-        console.log(cardIngredients);
+        // console.log(cardIngredients);
 
-        function containsUnwantedIngredient(ingredients, unwanted) {
+        // for...of遍歷該食譜的所有食材，判斷出確實不想要的食材回傳true
+        function notWantedIngredient(ingredients, unwanted) {
           for (let ingredient of ingredients) {
             ingredient = ingredient.trim();
             if (!ingredient.startsWith('@') && ingredient.includes(unwanted)) {
@@ -44,9 +49,10 @@
           }
           return false;
         }
-        
+
+        // 判斷式使用其相反值
         let matchesSearch = (wantInput === '' || cardName.includes(wantInput) || cardIngredients.includes(wantInput)) &&
-        (notWantInput === '' || (!cardName.includes(notWantInput) && !containsUnwantedIngredient(cardIngredients, notWantInput)));
+          (notWantInput === '' || (!cardName.includes(notWantInput) && !notWantedIngredient(cardIngredients, notWantInput)));
         // /搜尋功能
 
         // 轉換資料表示型式
@@ -69,14 +75,23 @@
           arraysOverlap(cardClass, style) &&
           arraysOverlap(cardClass, vege);
         // /標籤篩選
+       
 
         if (matchesSearch && matchesFilters) {
-          $(this).css('display', 'block');
+          $(this).css({
+            'display': 'block',
+            'grid-column': (visibleCount % 6 === 0 || visibleCount % 6 === 4) ? 'span 2' : 'auto',
+            'grid-row': (visibleCount % 6 === 0 || visibleCount % 6 === 4) ? 'span 2' : 'auto',
+            'height': (visibleCount % 6 === 0 || visibleCount % 6 === 4) ? '520px' : '250px'
+          });
+          visibleCount++;
         } else {
-          $(this).css('display', 'none');
+          $(this).css('display', 'none')
         }
       })
     }
+
+    filterRecipes()
 
     $('#search_btn').on('click', filterRecipes)
     $('.filter_btn input[type="checkbox"]').on('change', filterRecipes)

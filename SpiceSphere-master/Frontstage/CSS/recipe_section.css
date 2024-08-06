@@ -204,13 +204,13 @@ a {
 #recipe_pic_section .recipe_card:hover .recipe_describe {
   opacity: 1; /* 修改的opacity */
 }
-#recipe_pic_section .recipe_card:nth-child(6n+1),
-#recipe_pic_section .recipe_card:nth-child(6n+4) {
+#recipe_pic_section .recipe_card.visible:nth-of-type(6n + 1),
+#recipe_pic_section .recipe_card.visible:nth-of-type(6n + 4) {
   height: 520px;
   grid-column: span 2;
   grid-row: span 2;
 }
-#recipe_pic_section .recipe_card:nth-child(6n+4) {
+#recipe_pic_section .recipe_card.visible:nth-of-type(6n + 4) {
   grid-column: span 2/-1;
 }
 
@@ -340,13 +340,12 @@ a {
   #recipe_pic_section .recipe_card:hover .recipe_describe {
     opacity: 1; /* 修改的opacity */
   }
-  #recipe_pic_section .recipe_card:nth-child(6n+1),
-  #recipe_pic_section .recipe_card:nth-child(6n+4) {
-    height: 420px;
-    grid-column: span 2;
-    grid-row: span 2;
+  #recipe_pic_section .recipe_card:nth-of-type(6n + 1),
+  #recipe_pic_section .recipe_card:nth-of-type(6n + 4) {
+    height: 520px;
+    grid-area: span 2/span 2;
   }
-  #recipe_pic_section .recipe_card:nth-child(6n+4) {
+  #recipe_pic_section .recipe_card:nth-of-type(6n + 4) {
     grid-column: span 2/-1;
   }
 }
