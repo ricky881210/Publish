@@ -9,52 +9,70 @@
     <script src="/Backstage/jquery/jquery-3.7.1.min.js"></script>
   </head>
   <script>
+window.onload = () => {
+  const searchFromNav = sessionStorage.getItem('searchFromNav')
+        if (searchFromNav) {
+          $("#search_input").val(searchFromNav);
+          sessionStorage.removeItem('searchFromNav');
+        }
+  function filterCards() {
+    let searchInput = $("#search_input").val().toLowerCase();
+    let maxPrice = parseInt($("#price_range").val());
+    let checkedValues = $(
+      '.checkbox_container input[type="checkbox"]:checked'
+    )
+      .map(function () {
+        return $(this).val();
+      })
+      .get();
+
+    let hasVisibleCards = false;
+
+    $(".card").each(function () {
+      let card = $(this);
+      let cardName = card.find(".card_name").text().trim().toLowerCase();
+      let cardPrice = parseInt(
+        card.find(".card_price").text().replace("$", "").trim()
+      );
+      let cardClass = card.attr("value").split(",");
+
+      let matchesSearch = cardName.includes(searchInput);
+      let matchesPrice = cardPrice <= maxPrice;
+      let matchesClass =
+        checkedValues.length === 0 ||
+        cardClass.some((cls) => checkedValues.includes(cls.trim()));
+
+      if (matchesSearch && matchesPrice && matchesClass) {
+        card.show();
+        hasVisibleCards = true;
+      } else {
+        card.hide();
+      }
+    });
+
+    if (hasVisibleCards) {
+      $("#no_results").hide();
+    } else {
+      $("#no_results").show();
+    }
+  }
+
+  $("#search_btn").on("click", filterCards);
+  $("#price_range").on("input", filterCards);
+  $('.checkbox_container input[type="checkbox"]').on(
+    "change",
+    filterCards
+  );
+
+  // 初始化篩選
+  filterCards();
+};
+
     $(document).ready(function () {
       $(".range_container").on("input change", function () {
         $("#now_price").text("$ " + $(this).val());
       });
 
-      window.onload = () => {
-        function filterCards() {
-          let searchInput = $("#search_input").val().toLowerCase();
-          let maxPrice = parseInt($("#price_range").val());
-          let checkedValues = $(
-            '.checkbox_container input[type="checkbox"]:checked'
-          )
-            .map(function () {
-              return $(this).val();
-            })
-            .get();
-
-          $(".card").each(function () {
-            let card = $(this);
-            let cardName = card.find(".card_name").text().trim().toLowerCase();
-            let cardPrice = parseInt(
-              card.find(".card_price").text().replace("$", "").trim()
-            );
-            let cardClass = card.attr("value").split(",");
-
-            let matchesSearch = cardName.includes(searchInput);
-            let matchesPrice = cardPrice <= maxPrice;
-            let matchesClass =
-              checkedValues.length === 0 ||
-              cardClass.some((cls) => checkedValues.includes(cls.trim()));
-
-            if (matchesSearch && matchesPrice && matchesClass) {
-              card.show();
-            } else {
-              card.hide();
-            }
-          });
-        }
-
-        $("#search_btn").on("click", filterCards);
-        $("#price_range").on("input", filterCards);
-        $('.checkbox_container input[type="checkbox"]').on(
-          "change",
-          filterCards
-        );
-      };
     });
   </script>
   <body>
@@ -186,6 +204,7 @@
       </div>
 
       <div id="main_section_product_cards">
+        <div id="no_results">找不到符合條件的商品</div>
         <% items.forEach(function(product) { %>
         <div class="card" value="<%= product.related_name %>">
           <a

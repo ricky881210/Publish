@@ -63,6 +63,20 @@ app.get("/payment", (req, res) => {
   res.render("payment");
 });
 
+// 導覽列搜尋跳轉
+app.post("/turning", (req, res) => {
+  const select = req.body.select;
+  let url;
+  if (select === "recipe"){
+    url = "recipe_section"
+  }else if (select === "product"){
+    url = "product_section"
+  }else {
+    url = "/"
+  }
+  res.json({reUrl : url})
+})
+
 app.use(express.static("../"));
 app.use(express.static("jquery"));
 app.use(express.static("CSS"));

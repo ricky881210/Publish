@@ -12,6 +12,11 @@
 </head>
 <script>
   $(document).ready(function () {
+    const searchFromNav = sessionStorage.getItem('searchFromNav')
+    if (searchFromNav) {
+      $("#want").val(searchFromNav);
+      sessionStorage.removeItem('searchFromNav');
+    }
     function filterRecipes() {
       // 選擇被勾選的標籤
       function checkedValues(className) {
@@ -26,8 +31,7 @@
       let vege = checkedValues('vege')
       let hasResult = true;
       // /選擇被勾選的標籤
-      console.log(isKitchen);
-      
+
       // 於篩選結果排序使用
       let visibleCount = 0;
 
@@ -51,7 +55,7 @@
         }
 
         // 判斷式使用其相反值
-        let matchesSearch = (wantInput === '' || cardName.includes(wantInput) || cardIngredients.includes(wantInput)) &&
+        let matchesSearch = (wantInput === '' || cardName.includes(wantInput) || cardIngredients.includes(wantInput) || cardIngredients.includes('@' + wantInput)) &&
           (notWantInput === '' || (!cardName.includes(notWantInput) && !notWantedIngredient(cardIngredients, notWantInput)));
         // /搜尋功能
 
@@ -75,7 +79,7 @@
           arraysOverlap(cardClass, style) &&
           arraysOverlap(cardClass, vege);
         // /標籤篩選
-       
+
 
         if (matchesSearch && matchesFilters) {
           $(this).css({
